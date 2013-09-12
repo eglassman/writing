@@ -1,5 +1,6 @@
 %\documentclass{sig-alt-release2}
-\documentclass{sig-alternate-2013}
+%\documentclass{sig-alternate-2013}
+\documentclass[12pt]{article}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage[nodayofweek]{datetime}
@@ -24,34 +25,29 @@
 \let\crnotice\mycrnotice%
 \let\confname\myconfname%
 
-\permission{Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage, and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the owner/author(s). Copyright is held by the author/owner(s).}
-\conferenceinfo{ICER'13,}{August 12--14, 2013, San Diego, California, USA.} \\
-\copyrightetc{ACM \the\acmcopyr\ ...\$15.00 \\ http://dx.doi.org/10.1145/2493394.2493421}
-\crdata{978-1-4503-2243-0/13/08}
+%\permission{Permission to make digital or hard copies of part or all of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage, and that copies bear this notice and the full citation on the first page. Copyrights for third-party components of this work must be honored. For all other uses, contact the owner/author(s). Copyright is held by the author/owner(s).}
+%\conferenceinfo{ICER'13,}{August 12--14, 2013, San Diego, California, USA.} \\
+%\copyrightetc{ACM \the\acmcopyr\ ...\$15.00 \\ http://dx.doi.org/10.1145/2493394.2493421}
+%\crdata{978-1-4503-2243-0/13/08}
 
 
-
-\clubpenalty=10000 
-\widowpenalty = 10000
+%
+%\clubpenalty=10000 
+%\widowpenalty = 10000
 
 \begin{document}
 
-\pagestyle{empty}
-\title{Visualizing and Classifying Multiple Solutions to Engineering Design Problems}
+%\pagestyle{empty}
+\title{Dealing with Multiple Implementations of Design Problems: \\Mining Student-Generated Alternatives}
 
-\numberofauthors{1}
-\author{
- \alignauthor Elena Glassman \\
-  \affaddr{MIT CSAIL, UID Group,  Rm G707}\\
-  \affaddr{32 Vassar St., Cambridge, MA 02139, USA}\\
-  %\affaddr{}\\
-  \email{ELG@MIT.edu}
+%\numberofauthors{1}
+\author{Elena Glassman \\ CSAIL HCI \\ ELG@MIT.edu
 }
 
 \maketitle
 
 \begin{abstract}
-In engineering design courses, many problems have a specification that the student's implementation must meet, but give the student a broad range of freedom for the internal design of that implementation. There may be several distinct, correct strategies for solving them, some of which may be unknown to the teaching staff or intelligent tutor designer. Visualizing and classifying the multiple solutions that students generate in response to assigned engineering design problems will improve hints and answers to students' questions, whether they are provided by peers, staff, or automation. I log incremental snapshots of students' solutions as they progress toward correct and incorrect solutions. Initial investigations demonstrate that the choice of features to represent solutions is critical, and may be domain- or problem-dependent.
+In engineering design courses, many problems have a specification that the student's implementation must meet, but give the student a broad range of freedom for the internal design of that implementation. There may be several distinct, correct strategies for solving them, some of which may be unknown to the teaching staff or intelligent tutor designer. Visualization and classification of the multiple solutions that students generate in response to assigned engineering design problems will improve hints and answers to students' questions, whether they are provided by peers, staff, or automation. The approach will be to visualize hundreds or thousands of student implementations to discover alternatives, and then classify the path that students take to each implementation, either by machine learning or human staff. The classifications will inform assistance given to students, in the form of staff-student discussions, peer-pairing, and automated help.% I log incremental snapshots of students' solutions as they progress toward correct and incorrect solutions. Initial investigations demonstrate that the choice of features to represent solutions is critical, and may be domain- or problem-dependent.
 \end{abstract}
 
 %\category{K.3.2}{Computers and Education} {Computers and Information Science
@@ -60,25 +56,25 @@ In engineering design courses, many problems have a specification that the stude
 %
 %\keywords{Choose your own specific keywords.}
 
-\category{K.3.2}{Computers and Education}{Computer and Information Science Education}[computer science education]
-
-\keywords{Problem Solving Process, Pattern Recognition}
+%\category{K.3.2}{Computers and Education}{Computer and Information Science Education}[computer science education]
+%
+%\keywords{Problem Solving Process, Pattern Recognition}
 
 %add categories about design-trade-offs, online learning, digital design
 %\terms{Measurement, Performance, Human Factors} %Theory}
 %\keywords{Pattern Recognition} %Problem Solving Process, Classification, Clustering, Intelligent Tutor, Student Progress Model, Similarity Metrics, Visual Data Mining, Programmer Event Data} %ACM proceedings, \LaTeX, text tagging}
 
 
-\section{RESEARCH SITUATION}
+\section{INTRODUCTION}
 
-I am a doctoral candidate in MIT's Electrical Engineering and Computer Science (EECS) Department. I have completed all of my qualifying exams, and am now in my fourth year. I discuss my initial thesis research investigations with several professors, including my advisor, Rob Miller. Together, they cover the fields of machine learning, human computer interfaces, and instructional design. I intend to formalize the relationship by the end of this summer, with the submission of my thesis proposal. I plan to analyze and present the data I collect from students over the next two years, in order to graduate in May 2015.
+%I am a doctoral candidate in MIT's Electrical Engineering and Computer Science (EECS) Department. I have completed all of my qualifying exams, and am now in my fourth year. I discuss my initial thesis research investigations with several professors, including my advisor, Rob Miller. Together, they cover the fields of machine learning, human computer interfaces, and instructional design. I intend to formalize the relationship by the end of this summer, with the submission of my thesis proposal. I plan to analyze and present the data I collect from students over the next two years, in order to graduate in May 2015.
 
 In engineering design courses, many problems have a specification that the student's implementation must meet, but give the student a broad range of freedom for the internal design of that implementation. There may be several distinct, correct solutions, some of which may be unknown to the teaching staff or intelligent tutor designer. This raises problems for helping students and giving feedback. In face-to-face situations, if a teaching assistant doesn't recognize the student's solution path, then they may redirect the student completely, costing them work and possibly derailing a novel, valid solution.  In an intelligent tutor or massively open online course (MOOC), the automated hint generators may not recognize the unexpected solution paths, and will generate unhelpful hints.
 
 A first step toward discovering these alternate correct solution paths is visualizing many student solutions together, so that the teaching staff can understand the space of paths leading to correct solutions. I have taken this approach in 6.004, an undergraduate computer architecture (CompArch) course. I have also observed this approach in a collaborator's work on an online Matlab programming challenge. Plotting dynamic behavior or static features such as parse tree size is enough, in these initial examples, to separate students' solutions into clear clusters representing different strategies. In the Matlab challenge, visualizing code size provides insight into common strategies as well as successful and unsuccessful outliers. In CompArch, this led to better education of the teaching staff. Some now ask a simple question to identify the student's approach before trying to help them.
 
-\section{CONTEXT AND MOTIVATION}
-I am an instructor for an undergraduate introductory course on computer architecture (CompArch). Roughly two hundred students enroll per semester. 
+\section{MOTIVATING EXAMPLE}
+I am currently an instructor for an undergraduate introductory course on computer architecture (CompArch). Enrollment has swung between roughly two hundred and over three hundred students per semester. 
 
 One mid-semester lab assignment in this course requires that students create state-transition rules for a Turing machine. %Each line in the behavioral specification boils down to the following: if you're in state \textbf{X} and you read symbol \textbf{Y} on the tape, overwrite symbol \textbf{Y} with symbol \textbf{Z}, move the tape-reader in direction \textbf{W}, and transition to state \textbf{Q}.
 Many distinct sets of state-transition rules behave identically, given the same input tape. %Even after looking at hundreds of Turing machines, which all give the same correct final answers, there is very little a human can discern simply by looking at the students' code. The same is true even after translating these textual statements into a diagram of state transitions.
@@ -89,11 +85,12 @@ The fact that there were {\em two} correct solutions to the Turing machine assig
 
 %Each staff member for this course is encouraged to complete the lab on their own before counseling students. Staff members were aware of the solution they each found, and yet were not aware that there were two mutually exclusive common solutions. 
 
-This is one example of an engineering design problem where a small number of common, distinct, correct solutions are distinguishable once an appropriate representation of the data is found. My thesis research explores the generality of this phenomenon, with a focus on scaling up to online environments with thousands of students.
+This is one example of an engineering design problem where a small number of common, distinct, correct solutions are distinguishable once an appropriate representation of the data is found. My thesis research explores the generality of this phenomenon, with a focus on scaling up to environments with hundreds or thousands of students.
 
 
 \section{BACKGROUND \& RELATED WORK}
 
+The most recent relevant work comes from Stanford. {\color{red}FILL IN DESCRIPTION OF MOOCSHOP PAPER HERE.}
 
 Helminen et al. \cite{ICERHelminen} introduced interactive graphs for examining the problem solving process of students working on small programming-like problems. In contrast to our work, problems with multiple solutions were outside the scope of their investigation.
 
@@ -107,7 +104,7 @@ Peer-pairing can stand in place of staff assistance. Weld et al. speculate about
 
 \section{STATEMENT OF THESIS/PROBLEM}
 
-My thesis statement is: Visualization and automated classification of the multiple solutions that students generate in response to assigned engineering design problems will improve hints and answers to students' questions, whether they are provided by peers, staff, or automation. 
+My thesis statement is: Visualization and classification of the multiple solutions that students generate in response to assigned engineering design problems will improve hints and answers to students' questions, whether they are provided by peers, staff, or automation. 
 
 I plan to explore the following aspects of this claim:
 \begin{itemize}
@@ -119,6 +116,9 @@ I plan to explore the following aspects of this claim:
 
 
 \section{RESEARCH GOALS \& METHODS}
+
+My approach will be to visualize hundreds or thousands of student implementations to discover alternatives, and then classify the path that students take to each implementation, either by machine learning or human staff. The classifications will inform assistance given to students, in the form of staff-student discussions, peer-pairing, and automated help. 
+
 %I will run a user study to access whether the interactive data visualization environment I design helps teaching staff find meaningful strategy distinctions. My subjects will be teaching staff of engineering courses. If subjects use the tool and find similar demarcations between strategies, and possibly similar sets of features to describe those demarcations, it may be possible to conclude the tool itself is enabling the staff to identify meaningful, persistent patterns in their students' solutions. %In a pre- and post-interview, we can analyze how the tool affects the staff's understanding of the ways in which a student can solve a particular assigned engineering problem.
 
 I will design an interactive data visualization environment for teaching staff. By interacting with representations of many student solutions at once, staff can visually identify and investigate patterns. If staff independently find similar meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
@@ -132,12 +132,15 @@ For peer-pairing, there are a variety of solution path-dependent pairing strateg
 In CompArch, we capture snapshots of students' intermediate code as they work. These snapshot sequences are solution paths ready for analysis. One semester's data has been collected already. I hope to demonstrate generality on similar datasets from other engineering domains.
 
 \section{EXPECTED CONTRIBUTIONS}
+
+I expect to help students reach their envisioned (valid) implementations, and also understand alternative design choices and their tradeoffs. At the same time, I expect to help teachers discover the full space of alternatives and recognize novel or better implementations.
+
 %Since my thesis research is relevant to engineering design tasks with multiple correct solutions, it may be of particular interest to teaching staff with a constructivist perspective. Such staff members may be attempting to elicit the student's envisioned solution strategy, and then help them toward a working solution that employs that strategy. The algorithms, tools, visualizations, and resulting insights from this and future work are intended to augment this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
 This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
-\textbf{Acknowledgments}
-This work is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374.
+\section{Acknowledgments}
+This work is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374. It has also been made possible by countless discussions and pair-research sessions with fellow members of CSAIL HCI, Prof. Leslie Kaelbling, Prof. Chris Terman, and Marty Glassman.
 
 \bibliographystyle{abbrv}
 \bibliography{icerbib}
