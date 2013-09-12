@@ -90,7 +90,7 @@ This is one example of an engineering design problem where a small number of com
 
 \section{BACKGROUND \& RELATED WORK}
 
-The most recent relevant work comes from Stanford. {\color{red}FILL IN DESCRIPTION OF MOOCSHOP PAPER HERE.}
+The most recent relevant work comes from Stanford. {\color{red}FILL IN DESCRIPTION OF MOOCSHOP PAPER HERE, plus other papers from DiscussionPaperNotes\_Glassman.docx in the writing folder.}
 
 Helminen et al. \cite{ICERHelminen} introduced interactive graphs for examining the problem solving process of students working on small programming-like problems. In contrast to our work, problems with multiple solutions were outside the scope of their investigation.
 
@@ -121,7 +121,7 @@ My approach will be to visualize hundreds or thousands of student implementation
 
 %I will run a user study to access whether the interactive data visualization environment I design helps teaching staff find meaningful strategy distinctions. My subjects will be teaching staff of engineering courses. If subjects use the tool and find similar demarcations between strategies, and possibly similar sets of features to describe those demarcations, it may be possible to conclude the tool itself is enabling the staff to identify meaningful, persistent patterns in their students' solutions. %In a pre- and post-interview, we can analyze how the tool affects the staff's understanding of the ways in which a student can solve a particular assigned engineering problem.
 
-I will design an interactive data visualization environment for teaching staff. By interacting with representations of many student solutions at once, staff can visually identify and investigate patterns. If staff independently find similar meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
+I will design an interactive data visualization environment for teaching staff. By interacting with representations of many student solutions at once, staff can visually identify and investigate patterns. If staff independently find similarly meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
 
 For peer-pairing, there are a variety of solution path-dependent pairing strategies. One could pair students on the same solution path: students who have implemented a recognized solution or fixed a particular bug would be paired with another student who is struggling to implement the same solution or fix the same bug. By comparing metrics, e.g., grades, of students paired based on solution paths, relative to random pairing and no pairing, I can measure the interventions' educational value.
 
@@ -129,7 +129,7 @@ For peer-pairing, there are a variety of solution path-dependent pairing strateg
 
 %For example, one could pair two students whose solution paths are heading toward the same solution among the multiple possibilities for a particular engineering design problem, but one has a bug that the other has already fixed in their own code. Alternatively, one could pair two students, one who has already successfully employed a particular strategy with one who is struggling to implement it. The learning, satisfaction, and perception of self-efficacy gains associated with these pairing strategies can be tested in a study deployed within a residential or online engineering class, after integrating the existing question-and-answer/discussion forum with the learning management system that keeps track of each student's history of solutions. By incentivising students to assist other students, and then pairing them randomly or according to solution path-dependent strategies, I can approximately measure the educational value of the intervention.
 
-In CompArch, we capture snapshots of students' intermediate code as they work. These snapshot sequences are solution paths ready for analysis. One semester's data has been collected already. I hope to demonstrate generality on similar datasets from other engineering domains.
+In CompArch, we capture snapshots of students' intermediate code as they work. These snapshot sequences are solution paths ready for analysis. One semester's data has been collected already. I hope to demonstrate generality on similar datasets from 6.005, a software engineering course which also has collected snapshot sequences of students' code.
 
 \section{EXPECTED CONTRIBUTIONS}
 
@@ -138,6 +138,16 @@ I expect to help students reach their envisioned (valid) implementations, and al
 %Since my thesis research is relevant to engineering design tasks with multiple correct solutions, it may be of particular interest to teaching staff with a constructivist perspective. Such staff members may be attempting to elicit the student's envisioned solution strategy, and then help them toward a working solution that employs that strategy. The algorithms, tools, visualizations, and resulting insights from this and future work are intended to augment this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
 This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
+
+\section{TIMELINE}
+
+\begin{itemize}
+\item {\bf Fall '13} Deploy server-based D3 visualizations of working student submissions in the context of last years' working submissions during check-offs with me in 6.004. Log interactions with the visualization and record conversations with students while they compare their design to other options. Explore the generalization of the visualizations to representing Java exercises completed in 6.005 during past semesters. Explore use of Rishabh Singh's autograder for JSIM, and note what gaps in feedback arise from its current sole consideration on input-output behavior.
+\item {\bf Spring '14} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, interviewing them on their knowledge of the solution space pre- and post-interaction with the visualization. Add machine learning components as necessary, for helping humans identify patterns. Explore use for partial as well as completed labs. Iterate with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. Work with Singh to augment his autograder so that it gives feedback informed by which of several implementations a student is "closest" to.
+\item {\bf Summer '14} Use NSF funding to do an "internship" at {\color{red} Stanford Visualization (?)} working on the visual presentation of information.
+\item {\bf Fall '15} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, and auto-suggest peer-pairings for students based on partial implementations. Compare solution paths for students experiencing auto-suggested peer assistance versus staff assistance. Continue iterating with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. Deploy Singh's modified autograder in 6.004.
+\item {\bf Spring '15} Write thesis. Tie up loose ends. Defend thesis. Celebrate. Graduate!
+\end{itemize}
 
 \section{Acknowledgments}
 This work is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374. It has also been made possible by countless discussions and pair-research sessions with fellow members of CSAIL HCI, Prof. Leslie Kaelbling, Prof. Chris Terman, and Marty Glassman.
