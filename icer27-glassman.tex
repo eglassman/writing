@@ -172,7 +172,11 @@ A next step toward discovering the space of correct solutions is visualizing man
 
 By repeating this process on several domains, specifically on 6.004's design assignments written in a hardware description language and on 6.005's software designs written in Java, I propose to generalize the experience and build a tool for teachers which supports this kind of exploratory analysis of student solutions regardless of the teachers' specific domain and assignment. The eligible space of domains this could potentially generalize to are ones in which implementations are submitted as machine-readable code and where assignments have a specification that the student's implementation must meet, but give the student a broad range of freedom for the internal design of that implementation.
 
-The exploratory data analysis and feature selection will power machine learning tools, such as clustering algorithms, potentially including active/interactive machine learning modules for teachers to correct the systems' classification of new implementations.
+The exploratory data analysis and feature selection will power machine learning tools, such as clustering algorithms, potentially including active/interactive machine learning modules for teachers to correct the systems' classification of new implementations. 
+
+In order to evaluate the contribution of this interactive data visualization environment for teaching staff, I will run a user study on staff members of courses, at MIT and possibly other institutions, in which the student submissions are in machine-readable code and there is non-trivial latitude given to students for the internal implementation design. By interacting with representations of many students solutions' at once, users will attempt to identify clusters. If staff independently find similarly meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
+
+\subsection{
 
 %My approach will be to visualize hundreds or thousands of student implementations to discover alternatives, and then classify the path that students take to each implementation, either by machine learning or human staff. The classifications will inform assistance given to students, in the form of staff-student discussions, peer-pairing, and automated help. 
 
@@ -180,7 +184,7 @@ The exploratory data analysis and feature selection will power machine learning 
 
 %I will run a user study to access whether the interactive data visualization environment I design helps teaching staff find meaningful strategy distinctions. My subjects will be teaching staff of engineering courses. If subjects use the tool and find similar demarcations between strategies, and possibly similar sets of features to describe those demarcations, it may be possible to conclude the tool itself is enabling the staff to identify meaningful, persistent patterns in their students' solutions. %In a pre- and post-interview, we can analyze how the tool affects the staff's understanding of the ways in which a student can solve a particular assigned engineering problem.
 
-I will design an interactive data visualization environment for teaching staff. By interacting with representations of many student solutions at once, staff can visually identify and investigate patterns. If staff independently find similarly meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
+
 
 For peer-pairing, there are a variety of solution path-dependent pairing strategies. One could pair students on the same solution path: students who have implemented a recognized solution would be paired with another student who is struggling to implement the same solution. By comparing metrics, e.g., grades, of students paired based on solution paths, relative to random pairing and no pairing, I can measure the interventions' educational value.
 
