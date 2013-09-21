@@ -76,17 +76,17 @@ A first step toward discovering these alternate correct solution paths is visual
 
 %In CompArch, this led to better education of the teaching staff. As a result, I now ask a simple question to identify the student's approach before trying to help them.
 
-\section{MOTIVATING EXAMPLE}
-I am currently an instructor for an undergraduate introductory course on computer architecture (CompArch). Enrollment has swung between roughly two hundred and over three hundred students per semester. One mid-semester lab assignment in this course requires that students create state-transition rules for a Turing machine. %Each line in the behavioral specification boils down to the following: if you're in state \textbf{X} and you read symbol \textbf{Y} on the tape, overwrite symbol \textbf{Y} with symbol \textbf{Z}, move the tape-reader in direction \textbf{W}, and transition to state \textbf{Q}.
-Many distinct sets of state-transition rules behave identically, given the same input tape. %Even after looking at hundreds of Turing machines, which all give the same correct final answers, there is very little a human can discern simply by looking at the students' code. The same is true even after translating these textual statements into a diagram of state transitions.
-
-The dynamic behavior of students' Turing machines has recurring patterns. I visualized this dynamic behavior for 148 students' two-state Turing machines, and by visual inspection of the Turing machine's movement across a common input tape, identified strategies \cite{ICERGlassman}. The majority (88\%) of the solutions employed one of two mutually exclusive strategies: (1) matching the innermost open parenthesis with the innermost closed parenthesis and (2) matching the $n^{th}$ open parenthesis with the $n^{th}$ closed parenthesis.
-
-The fact that there were {\em two} correct solutions to the Turing machine assignment came as a surprise. I now ask struggling students a question first, to determine the solution they are aiming for. I can then suggest edits that preserve the chosen solution, if I recognize it as correct. Common solution identification also allows me to recognize novel alternative solutions.
-
-%Each staff member for this course is encouraged to complete the lab on their own before counseling students. Staff members were aware of the solution they each found, and yet were not aware that there were two mutually exclusive common solutions. 
-
-This is one example of an engineering design problem where a small number of common, distinct, correct solutions are distinguishable once an appropriate representation of the data is found. My thesis research explores the generality of this phenomenon, with a focus on scaling up to environments with hundreds or thousands of students.
+%\section{MOTIVATING EXAMPLE}
+%I am currently an instructor for an undergraduate introductory course on computer architecture (CompArch). Enrollment has swung between roughly two hundred and over three hundred students per semester. One mid-semester lab assignment in this course requires that students create state-transition rules for a Turing machine. %Each line in the behavioral specification boils down to the following: if you're in state \textbf{X} and you read symbol \textbf{Y} on the tape, overwrite symbol \textbf{Y} with symbol \textbf{Z}, move the tape-reader in direction \textbf{W}, and transition to state \textbf{Q}.
+%Many distinct sets of state-transition rules behave identically, given the same input tape. %Even after looking at hundreds of Turing machines, which all give the same correct final answers, there is very little a human can discern simply by looking at the students' code. The same is true even after translating these textual statements into a diagram of state transitions.
+%
+%The dynamic behavior of students' Turing machines has recurring patterns. I visualized this dynamic behavior for 148 students' two-state Turing machines, and by visual inspection of the Turing machine's movement across a common input tape, identified strategies \cite{ICERGlassman}. The majority (88\%) of the solutions employed one of two mutually exclusive strategies: (1) matching the innermost open parenthesis with the innermost closed parenthesis and (2) matching the $n^{th}$ open parenthesis with the $n^{th}$ closed parenthesis.
+%
+%The fact that there were {\em two} correct solutions to the Turing machine assignment came as a surprise. I now ask struggling students a question first, to determine the solution they are aiming for. I can then suggest edits that preserve the chosen solution, if I recognize it as correct. Common solution identification also allows me to recognize novel alternative solutions.
+%
+%%Each staff member for this course is encouraged to complete the lab on their own before counseling students. Staff members were aware of the solution they each found, and yet were not aware that there were two mutually exclusive common solutions. 
+%
+%This is one example of an engineering design problem where a small number of common, distinct, correct solutions are distinguishable once an appropriate representation of the data is found. My thesis research explores the generality of this phenomenon, with a focus on scaling up to environments with hundreds or thousands of students.
 
 
 \section{BACKGROUND \& RELATED WORK}
@@ -102,6 +102,10 @@ Huang et. al. \cite{MOOCshop} make a case for making out the solution space usin
 
 These results corroborate earlier results on the feasibility of automated classification of student code submissions. For example, Taherkhani et al. \cite{taherkhani12} demonstrated the practicality of identifying which sorting algorithm a student implemented, using supervised machine learning.
 
+Luxton-Reilly et al. \cite{Luxton13} have 
+
+There is a recently proposed approach to human-powered classification of solutions which produces a taxonomy of solutions. EXPLAIN .
+
 \subsubsection{Solution Paths}
 
 In this proposal, machine learning and visualization are considered to be automated and human-based classification, respectively. Examples of both methods have been applied to students' paths to solutions.
@@ -110,6 +114,8 @@ Using automated classification methods, Piech et. al. \cite{Piech} found distinc
 
 Helminen et al. \cite{ICERHelminen} also identified distinct paths to solutions, and introduced interactive graphs for gaining insight about the problem solving process of students working on small programming-like problems. In contrast to our work, problems with multiple solutions were outside the scope of their investigation.
 
+
+
 \subsubsection{Active Learning of Solution Clusters}
 
 CITE DATA TAMER APPLICABILITY FOR ITS HUMAN ACTIVE LEARNING COMPONENT to partial solutions
@@ -117,7 +123,7 @@ Community source the distance metrics/cluster boundaries: Ask Student: "Is this 
 
 \subsection{Methods of Intervention}
 
-Discussions/compare and contrast: Patitsas et al. \cite{PatitsasICER13} has... (and look at her cited works, include them too!)
+Discussions/compare and contrast: Patitsas et al. \cite{PatitsasICER13} has... (and look at her cited works, include them too!) AND CITE \cite{peerReview98}
 
 Peer-pairing: can stand in place of staff assistance. Weld et al. speculate about peer-pairing in MOOCs based on student competency measures \cite{WeldHcomp12}.
 
