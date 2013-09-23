@@ -176,7 +176,7 @@ The exploratory data analysis and feature selection will power machine learning 
 
 In order to evaluate the contribution of this interactive data visualization environment for teaching staff, I will run a user study on staff members of courses, at MIT and possibly other institutions, in which the student submissions are in machine-readable code and there is non-trivial latitude given to students for the internal implementation design. By interacting with representations of many students solutions' at once, users will attempt to identify clusters. If staff independently find similarly meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success.
 
-\subsection{
+\subsection{Solution Path Recognition}
 
 %My approach will be to visualize hundreds or thousands of student implementations to discover alternatives, and then classify the path that students take to each implementation, either by machine learning or human staff. The classifications will inform assistance given to students, in the form of staff-student discussions, peer-pairing, and automated help. 
 
@@ -191,12 +191,12 @@ For peer-pairing, there are a variety of solution path-dependent pairing strateg
 % The learning, satisfaction, and perception of self-efficacy gains associated with these pairing strategies can be tested in a study deployed within a residential or online engineering class, after integrating the existing question-and-answer/discussion forum with the learning management system that keeps track of each student's solution paths.
 
 %For example, one could pair two students whose solution paths are heading toward the same solution among the multiple possibilities for a particular engineering design problem, but one has a bug that the other has already fixed in their own code. Alternatively, one could pair two students, one who has already successfully employed a particular strategy with one who is struggling to implement it. The learning, satisfaction, and perception of self-efficacy gains associated with these pairing strategies can be tested in a study deployed within a residential or online engineering class, after integrating the existing question-and-answer/discussion forum with the learning management system that keeps track of each student's history of solutions. By incentivising students to assist other students, and then pairing them randomly or according to solution path-dependent strategies, I can approximately measure the educational value of the intervention.
-
-In CompArch, we capture snapshots of students' intermediate code as they work. These snapshot sequences are solution paths ready for analysis. One semester's data has been collected already. I hope to demonstrate generality on similar datasets from 6.005, a software engineering course which also has collected snapshot sequences of students' code.
+%
+%In CompArch, we capture snapshots of students' intermediate code as they work. These snapshot sequences are solution paths ready for analysis. One semester's data has been collected already. I hope to demonstrate generality on similar datasets from 6.005, a software engineering course which also has collected snapshot sequences of students' code.
 
 \section{EXPECTED CONTRIBUTIONS}
 
-I expect to help students reach their envisioned (valid) implementations, and also understand alternative design choices and their tradeoffs. At the same time, I expect to help teachers discover the full space of alternatives and recognize novel or better implementations.
+I expect to help students reach their envisioned (valid) implementations, and also understand alternative design choices and their tradeoffs. At the same time, I expect to create a software framework, and an instance of such a framework, which helps teachers discover the full space of alternatives and recognize novel or better implementations.
 
 %Since my thesis research is relevant to engineering design tasks with multiple correct solutions, it may be of particular interest to teaching staff with a constructivist perspective. Such staff members may be attempting to elicit the student's envisioned solution strategy, and then help them toward a working solution that employs that strategy. The algorithms, tools, visualizations, and resulting insights from this and future work are intended to augment this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
