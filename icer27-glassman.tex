@@ -100,7 +100,7 @@ The related work has been partitioned based on method of discovering the space o
 
 \subsection{Classification of Student Solutions}
 
-The most recent relevant work on finding clusters in solutions comes from Stanford. In \cite{MOOCshop}, Huang et. al. consider tens of thousands of homework solutions submitted to Stanford’s Fall 2011 Machine Learning MOOC, and identify clusters of solutions based on measures of syntactic and functional similarity. By identifying clusters, they hope to enable the ``force multiplication'' of teacher feedback. 
+The most recent relevant work on finding clusters in solutions comes from Stanford. In \cite{MOOCshop}, Huang et. al. consider tens of thousands of homework solutions submitted to Stanford’s Fall 2011 Machine Learning MOOC, and identify clusters of solutions based on measures of syntactic and functional similarity. 
 
 Huang et. al. \cite{MOOCshop} make a case for mapping out the solution space using analysis beyond just input-output behavior. They claim that output-based feedback alone is insufficient, since the relationship between input-output pairs and bugs, both mental and programmatic, is not a one-to-one mapping.  They observed that for students' approaches to implementing regularized logistic regression, {\em similarly behaving programs were implemented in significantly different ways}. While Huang et. al. focused on how to get appropriate teacher feedback to each student, they conclude that knowing the space of solutions, and how current students are distributed in that space, is valuable to the teaching staff, in both residential and online courses. 
 
@@ -130,22 +130,57 @@ Community source the distance metrics/cluster boundaries: Ask Student: "Is this 
 
 \subsection{Relevant Learning Environment Methods}
 
-Discussions/compare and contrast: Patitsas et al. \cite{PatitsasICER13} has... (and look at her cited works, include them too!) AND CITE \cite{peerReview98} and
+\subsubsection{Comparing and Contrasting Examples}
 
-Since the Computer Science Education community sees great learning value in examples, Luxton-Reilly et al. \cite{Luxton13} suggest that identifying distinct clusters of solutions can help instructors select appropriate examples of code for teaching purposes. 
+%Discussions/compare and contrast: Patitsas et al. \cite{PatitsasICER13} has... (and look at her cited works, include them too!) 
 
-In order to communicate programming concepts, it is common practice for teachers to present example programs. When examples are given, it is common to present several different examples, to illustrate various approaches and styles \cite{Luxton13}. Peer Review \cite{peerReview98} is one of the existing pedagogies which asks students to compare and constrast these different examples. These methods have their theoretical basis in variation theory \cite{} and social cognitive theory \cite{}.
+%Since the Computer Science Education community sees great learning value in examples,  
 
-One common use of examples is to illustrate the dierent
-approaches (and/or programming styles) that may be used
-to solve a given problem. This process of asking students to
-consider the dierences between solutions is characteristic
-of pedagogies such as peer review [15], and is underpinned
-by variation theory [10, 14] and social cognitive theory [3].
+%In order to communicate programming concepts, it is common practice for teachers to present example programs. Furthermore, it is common to present several different examples, to illustrate various approaches and styles \cite{Luxton13}. 
 
-Peer-pairing: can stand in place of staff assistance. Weld et al. speculate about peer-pairing in MOOCs based on student competency measures \cite{WeldHcomp12}.
+%Current educational reforms in mathematics advocate that the
+%teacher act more as a facilitator, encouraging students to share and
+%compare their own thinking and problem-solving methods with
+%other students
 
-Automated assistance: Singh et al. \cite{rishabh} has developed input-output but syntactically-blind feedback...
+
+
+Marton et al.'s variation theory \cite{Marton03} holds that in order to learn something, one must see examples that vary along particular dimensions: ``contrast,'' as in pairing it with something it is not; ``generalization,'' as in presenting multiple instances of the object or concept to be learned, varying only that which is irrelevant; ``separation,'' as in presenting multiple instances of the object or concept, varying only that which can vary internally without changing the object or concept into something else; and ``fusion,'' as in seeing multiple examples in which previously analytically separated aspects must be processed together to recognize the object or concept. The aspects which are related to these dimensions of variation and therefore define the object or concept are called ``critical features.''
+
+Peer reviews and assessments, surveyed in \cite{peerReview98}, are one of the existing pedagogies in which teachers ask students to compare and constrast examples. The pedagogical method of comparing and contrasting ways of approaching a solution has now been validated in the literature of mathematics education research \cite{Star07}, cognitive science \cite{3,12,and13inPatitsas}, and computing education research \cite{Suhonen08, PatitsasICER13}.
+
+Given Marton et al.'s rubric for effective patterns of variation, and the identification of ``critical features,'' one can discern between more or less theoretically effective examples of the object or concept given to a student to learn. On this basis, Luxton-Reilly et al. \cite{Luxton13} suggest that identifying distinct clusters of solutions can help instructors select appropriate examples of code for teaching purposes.
+
+
+
+%More concretely, comparing and contrasting solution approaches Patitsas et al. \cite{PatitsasICER13} has 
+%
+% These methods have their theoretical basis in variation theory \cite{} and social cognitive theory \cite{}. 
+%
+%Comparing and contrasting dierent solution approaches is
+%known in math education and cognitive science to increase
+%student learning { what about CS? In this experiment, we
+%replicated work from Rittle-Johnson and Star, using a pretest{
+%intervention{posttest{follow-up design (n=241). Our intervention was an in-class workbook in CS2. A randomized half
+%of students received questions in a compare-and-contrast
+%style, seeing dierent code for dierent algorithms in parallel. The other half saw the same code questions sequentially,
+%and evaluated them one at a time. Students in the former
+%group performed better with regard to procedural knowledge (code reading & writing), and 
+%exibility (generating,
+%recognizing & evaluating multiple ways to solve a problem).
+%The two groups performed equally on conceptual knowledge.
+%Our results agree with those of Rittle-Johnson and Star, indicating that the existing work in this area generalizes to CS
+%education.    
+%
+%In light of these pedagogical frameworks, Luxton-Reilly et al. \cite{Luxton13} suggest that identifying distinct clusters of solutions can help instructors select appropriate examples of code for teaching purposes.
+
+\subsubsection{Feedback to Students}
+
+Peer-pairing can stand in place of staff assistance, to both reduce the load on teaching staff and give students a chance to gain ownership of material through teaching it to someone else. Weld et al. speculate about peer-pairing in MOOCs based on student competency measures \cite{WeldHcomp12}, and Klemmer et al. demonstrates peer assessments' scalability to large online classes \cite{Klemmer}.
+
+Generating tailored feedback to students in large classes tackling problems even as short as introductory programming assignments requires many man-hours of repetitive work. Singh et al. \cite{rishabh} are pushing the state of the art of automated feedback for short introductory programming assignments. However, their software is currently only differentiating between implementations based on their input-output characteristics. For example, this system cannot currently differentiate between two different sorting algorithms. If there are common dead-ends that have been identified by looking at incorrect student solutions to a particular problem, by hand, this system can identify that a student is very close to a known dead-end approach, but it cannot identify which functionally equivalent variant of a correct solution a student is approaching. 
+
+If Singh et al.'s automated feedback represents the one extreme end of the spectrum for providing tailored feedback to students, Huang et. al. \cite{MOOCshop} represents the other end. By clustering syntactically similar solutions which fail on the same input-output tests, Huang et al. hope to enable the ``force multiplication'' of teacher feedback, where a hand-written critique can be sent to each entire cluster.
 
 \subsection{Domain of Application}
 
