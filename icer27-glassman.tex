@@ -96,37 +96,33 @@ There is a growing set of recent papers documenting methods for discovering the 
 
 \section{BACKGROUND \& RELATED WORK}
 
-The related work has been partitioned based on method of discovering the space of solutions, existing structures within learning environments that this knowledge could enhance, and the specific domain to which these methods and interventions are applied. The work highlighted in the first section below addresses the feasibility and current state-of-the-art in classifying student solutions and solution paths, using machine learning algorithms and visualization methods. The second section highlights work from the Computer Science Education community on the relevance of solution space knowledge to various methods used within learning environments. The final subsection surveys the existing domains in which these methods have been applied, specifically concerning the type and scale of programming challenges.
+The related work has been partitioned based on method of discovering the space of solutions, existing structures within learning environments that this knowledge could enhance, and the specific domain to which these methods and interventions are applied. The work highlighted in the first section below addresses the feasibility and current state-of-the-art in classifying student implementations and implementation paths, using machine learning algorithms and visualization methods. The second section highlights work from the Computer Science Education community on the relevance of solution space knowledge to various methods used within learning environments. The final subsection surveys the existing domains in which these methods have been applied, specifically concerning the type and scale of programming challenges.
 
-\subsection{Classification of Student Solutions}
+\subsection{Classification of Student Implementations}
 
-The most recent relevant work on finding clusters in solutions comes from Stanford. In \cite{MOOCshop}, Huang et. al. consider tens of thousands of homework solutions submitted to Stanford’s Fall 2011 Machine Learning MOOC, and identify clusters of solutions based on measures of syntactic and functional similarity. 
+The most recent relevant work on finding clusters in implementations comes from Stanford. In \cite{MOOCshop}, Huang et. al. consider tens of thousands of implementations submitted to Stanford’s Fall 2011 Machine Learning MOOC, and identify clusters of implementations based on measures of syntactic and functional similarity. 
 
 Huang et. al. \cite{MOOCshop} make a case for mapping out the solution space using analysis beyond just input-output behavior. They claim that output-based feedback alone is insufficient, since the relationship between input-output pairs and bugs, both mental and programmatic, is not a one-to-one mapping.  They observed that for students' approaches to implementing regularized logistic regression, {\em similarly behaving programs were implemented in significantly different ways}. While Huang et. al. focused on how to get appropriate teacher feedback to each student, they conclude that knowing the space of solutions, and how current students are distributed in that space, is valuable to the teaching staff, in both residential and online courses. 
 
-%\subsubsection{Complete Solutions}
+The results presented in Huang et. al. corroborate earlier results on the feasibility of automated classification of student code submissions. For example, Taherkhani et al. \cite{taherkhani12} demonstrated the practicality of identifying which sorting algorithm a student implemented, using supervised machine learning methods. 
+ 
+Luxton-Reilly et al. \cite{Luxton13} takes a very different approach to discovering the kinds and degree of variation between student generated implementations. By thematic analysis \cite{thematic06} of student submissions, the authors generated a taxonomy that captures the variation between correct implementations in their dataset. They then created an Eclipse plug-in for classifying new code examples based on their taxonomy. 
 
-Luxton-Reilly et al. \cite{Luxton13} set out to discover the kinds and degree of variation between student generated solutions. Their approach hand-coded 
+%
+%
+%An active/interactive machine learning technique, which take advantage of human experts in the loop to resolve uncertainties, have been deployed for de-duplication in Stonebraker et al.'s Data Tamer \cite{DataTamer}.
 
-The results presented in Huang et. al. corroborate earlier results on the feasibility of automated classification of student code submissions. For example, Taherkhani et al. \cite{taherkhani12} demonstrated the practicality of identifying which sorting algorithm a student implemented, using supervised machine learning methods.
+\subsubsection{Classifying Paths to Implementations}
 
+Visualization and automatic recognition of the multiple ways by which a student can approach a solution is an area of active research. Using automated classification methods, Piech et. al. \cite{Piech} found distinct development paths to working implementations by putting students' incremental attempts into a pipeline involving classification, milestone discovery, Hidden Markov Modeling of the students' process, and clustering of implementation paths. These identified paths are visualized as finite state machine transition diagrams. Evaluation focused on predicting midterm exam grades and detecting milestone difficulty.
 
-There is a recently proposed approach to human-powered classification of solutions which produces a taxonomy of solutions. EXPLAIN .
+The following examples highlight research that is further from relevance to this thesis because the paths to a working implementation are classified by behavior rather than the type of final solution found. They are included for context. Kiesmueller et al. \cite{Kiesmueller} attempted to recognize strategies at a very high level, which are not specific to the challenge at hand. Example high-level problem-independent strategies were a top-down or bottom-up programming style. Helminen et al. \cite{ICERHelminen} introduced novel interactive graphs for examining the problem solving process of students working on small programming-like problems. However, problems with multiple solutions were outside the scope of their investigation.
 
-\subsubsection{Solution Paths}
-
-In this proposal, machine learning and visualization are considered to be automated and human-based classification, respectively. Examples of both methods have been applied to students' paths to solutions.
-
-Using automated classification methods, Piech et. al. \cite{Piech} found distinct development paths to solutions by putting students' incremental solution attempts into a pipeline involving classification, milestone discovery, Hidden Markov Modeling of the students' process, and clustering of solution paths. These identified paths are visualized as finite state machine transition diagrams. Evaluation focused on predicting midterm exam grades and detecting milestone difficulty.
-
-Helminen et al. \cite{ICERHelminen} also identified distinct paths to solutions, and introduced interactive graphs for gaining insight about the problem solving process of students working on small programming-like problems. In contrast to our work, problems with multiple solutions were outside the scope of their investigation.
-
-
-
-\subsubsection{Active Learning of Solution Clusters}
-
-CITE DATA TAMER APPLICABILITY FOR ITS HUMAN ACTIVE LEARNING COMPONENT to partial solutions
-Community source the distance metrics/cluster boundaries: Ask Student: "Is this what you did?" Ask teacher: "Are these the same?"
+%
+%\subsubsection{Active Learning of Solution Clusters}
+%
+%CITE DATA TAMER APPLICABILITY FOR ITS HUMAN ACTIVE LEARNING COMPONENT to partial solutions
+%Community source the distance metrics/cluster boundaries: Ask Student: "Is this what you did?" Ask teacher: "Are these the same?"
 
 \subsection{Relevant Learning Environment Methods}
 
@@ -149,7 +145,7 @@ Marton et al.'s variation theory \cite{Marton03} holds that in order to learn so
 
 Peer reviews and assessments, surveyed in \cite{peerReview98}, are one of the existing pedagogies in which teachers ask students to compare and constrast examples. The pedagogical method of comparing and contrasting ways of approaching a solution has now been validated in the literature of mathematics education research \cite{Star07}, cognitive science \cite{3,12,and13inPatitsas}, and computing education research \cite{Suhonen08, PatitsasICER13}.
 
-Given Marton et al.'s rubric for effective patterns of variation, and the identification of ``critical features,'' one can discern between more or less theoretically effective examples of the object or concept given to a student to learn. On this basis, Luxton-Reilly et al. \cite{Luxton13} suggest that identifying distinct clusters of solutions can help instructors select appropriate examples of code for teaching purposes.
+Given Marton et al.'s rubric for effective patterns of variation, and the identification of ``critical features,'' one can discern between more or less theoretically effective examples of the object or concept given to a student to learn. On this basis, Luxton-Reilly et al. \cite{Luxton13} suggest that identifying distinct clusters of implementations can help instructors select appropriate examples of code for teaching purposes.
 
 
 
@@ -178,13 +174,13 @@ Given Marton et al.'s rubric for effective patterns of variation, and the identi
 
 Peer-pairing can stand in place of staff assistance, to both reduce the load on teaching staff and give students a chance to gain ownership of material through teaching it to someone else. Weld et al. speculate about peer-pairing in MOOCs based on student competency measures \cite{WeldHcomp12}, and Klemmer et al. demonstrates peer assessments' scalability to large online classes \cite{Klemmer}.
 
-Generating tailored feedback to students in large classes tackling problems even as short as introductory programming assignments requires many man-hours of repetitive work. Singh et al. \cite{rishabh} are pushing the state of the art of automated feedback for short introductory programming assignments. However, their software is currently only differentiating between implementations based on their input-output characteristics. For example, this system cannot currently differentiate between two different sorting algorithms. If there are common dead-ends that have been identified by looking at incorrect student solutions to a particular problem, by hand, this system can identify that a student is very close to a known dead-end approach, but it cannot identify which functionally equivalent variant of a correct solution a student is approaching. 
+Generating tailored feedback to students in large classes tackling problems even as short as introductory programming assignments requires many man-hours of repetitive work. Singh et al. \cite{rishabh} are pushing the state of the art of automated feedback for short introductory programming assignments. However, their software is currently only differentiating between implementations based on their input-output characteristics. For example, this system cannot currently differentiate between two different sorting algorithms. If there are common dead-ends that have been identified by looking at incorrect student implementations to a particular problem, by hand, this system can identify that a student is very close to a known dead-end approach, but it cannot identify {\em which} functionally equivalent variant of a correct implementation a student is approaching. 
 
 If Singh et al.'s automated feedback represents the one extreme end of the spectrum for providing tailored feedback to students, Huang et. al. \cite{MOOCshop} represents the other end. By clustering syntactically similar solutions which fail on the same input-output tests, Huang et al. hope to enable the ``force multiplication'' of teacher feedback, where a hand-written critique can be sent to each entire cluster.
 
-\subsection{Domain of Application}
-
-LOOK AT COMPARCH COMMUNITY, describe scale of Singh solution, MOOCshop solution, types of programming (languages)
+%\subsection{Domain of Application}
+%
+%LOOK AT COMPARCH COMMUNITY, describe scale of Singh solution, MOOCshop solution, types of programming (languages)
 
 \section{STATEMENT OF THESIS/PROBLEM}
 
@@ -232,8 +228,6 @@ In order to evaluate the contribution of this interactive data visualization env
 
 %I will run a user study to access whether the interactive data visualization environment I design helps teaching staff find meaningful strategy distinctions. My subjects will be teaching staff of engineering courses. If subjects use the tool and find similar demarcations between strategies, and possibly similar sets of features to describe those demarcations, it may be possible to conclude the tool itself is enabling the staff to identify meaningful, persistent patterns in their students' solutions. %In a pre- and post-interview, we can analyze how the tool affects the staff's understanding of the ways in which a student can solve a particular assigned engineering problem.
 
-
-
 For peer-pairing, there are a variety of solution path-dependent pairing strategies. One could pair students on the same solution path: students who have implemented a recognized solution would be paired with another student who is struggling to implement the same solution. By comparing metrics, e.g., grades, of students paired based on solution paths, relative to random pairing and no pairing, I can measure the interventions' educational value.
 
 % The learning, satisfaction, and perception of self-efficacy gains associated with these pairing strategies can be tested in a study deployed within a residential or online engineering class, after integrating the existing question-and-answer/discussion forum with the learning management system that keeps track of each student's solution paths.
@@ -244,11 +238,11 @@ For peer-pairing, there are a variety of solution path-dependent pairing strateg
 
 \section{EXPECTED CONTRIBUTIONS}
 
-I expect to help students reach their envisioned (valid) implementations, and also understand alternative design choices and their tradeoffs. At the same time, I expect to create a software framework, and an instance of such a framework, which helps teachers discover the full space of alternatives and recognize novel or better implementations.
+This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
+
+I expect to build software that help students reach their envisioned (valid) implementations, and also understand alternative design choices and their tradeoffs. At the same time, I expect to create a software which helps teachers across multiple domains discover the full space of alternatives and recognize novel or better implementations in their students' implementations.
 
 %Since my thesis research is relevant to engineering design tasks with multiple correct solutions, it may be of particular interest to teaching staff with a constructivist perspective. Such staff members may be attempting to elicit the student's envisioned solution strategy, and then help them toward a working solution that employs that strategy. The algorithms, tools, visualizations, and resulting insights from this and future work are intended to augment this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
-
-This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
 \section{TIMELINE}
 
