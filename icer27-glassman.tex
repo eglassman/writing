@@ -280,11 +280,27 @@ As a researcher, my first step toward discovering the space of correct solutions
 
 By poring over many examples of students' code, I can get a sense for what design decisions partition the space of implemented solutions into useful clusters. Useful, in this case, refers to clusters which help me conceptualize the space of solutions and identify where new students fall into that space. 
 
-I have also given randomly chosen subsets of solutions to teaching staff or knowledgeable experts, for clustering by hand. By studying the ways in which humans, given the same set of solutions, come up with different partitions of the solution space, I can assess which features I need in order to support any or all those distinctions. 
+I have also given randomly chosen subsets of correct solutions to teaching staff or knowledgeable experts, for clustering by hand. By studying the ways in which humans, given the same set of solutions, come up with different partitions of the solution space, I can assess which features I need in order to support any or all those distinctions. 
 
 I have already taken this approach to an assignment in 6.004, an undergraduate computer architecture course in which virtual hardware is designed at the MOSFET and CMOS gate level and coded in a variant of SPICE called JSIM. Note that, when looking at raw JSIM code submissions to 6.004, human-made clusterings had little relationship to basic measurements, like the number of MOSFETs instantiated. This is unsurprising, since solution size is not readily apparent when looking at the raw code submitted. When I clustered solutions while knowing their relative size, size was a very helpful variable for clustering, and contributed heavily to my mental model of the design space. The relationship between the representation of solutions, in the form of measurements or features, and the human's mental model built while examining solutions, is the first of several reasons why HCI is the approach being taken for this problem.
 
-Regardless of the clustering(s) found, the intuition gained through this first exploratory step, akin to thematic analysis \cite{thematic06}, guide the steps that follow.
+This process was simultaneously performed by Rishabh Singh on 6.00x python submissions. 6.00x is a Massively Open Online Course, or MOOC, that serves as an introduction to programming. The MOOC platform provided a web-interface for students to write and test their code in the browser itself, and students were provided 30 attempts to submit their solutions for each of the exercises. Singh obtained thousands of submissions to the course exercises during the Fall 2012 course offering. He filtered out all incorrect submissions, as indicated by input-output testing, so that we could focus on variations in correct solutions. The number of correct submissions analyzed for each problem is shown in Table. \ref{table-edx-probs}. 
+
+\begin{table}
+\begin{tabular} {|c|c|c|}
+\hline
+\tabhead{Problem Description} & \tabhead{Total Submissions} & \tabhead {Correct Submissions} \\ \hline
+\codevar{comp-deriv} & 3013 & 1433 \\ \hline
+\codevar{hangman-guess} & 1746 & 1118 \\ \hline
+\codevar{iter-power} & 8940 & 3875 \\ \hline
+\end{tabular}
+\caption{Dataset of 6.00x problems from Fall 2012.}
+\label{table-edx-probs}
+\end{table}
+
+The \codevar{comp-deriv} and \codevar{hangman-guess} problems were part of week 3 problem set exercises, whereas \codevar{iter-power} was an in-lecture exercise for the lecture on iteration. The \codevar{comp-deriv} problem requires students to write a python function to compute the derivative of a polynomial, where the coefficients of the polynomial are represented as a python list. The \codevar{hangman-guess} problem takes a string \codevar{secretWord} and a list of characters \codevar{lettersGuessed} as input, and asks students to write a function that returns a string where all letters in \codevar{secretWord} that are not present in the list \codevar{lettersGuessed} are replaced with an underscore. The \codevar{iter-power} problem asks students to write a function to compute the exponential $\codevar{base}^\codevar{exp}$ iteratively using successive multiplication.
+
+He also gave randomly chosen subsets of correct solutions to knowledgeable experts, for clustering by hand. Regardless of the clustering(s) found, the intuition gained through this first exploratory step, akin to thematic analysis \cite{thematic06}, guide the steps that follow.
 
 \subsection{Feature Engineering}
 
@@ -299,102 +315,13 @@ Unfortunately, fingerprinting is not well-suited to our goal of clustering simil
 
 %We might instead put aside not only the idea of winnowing, but of selecting a compact fingerprint at all: while a fingerprint might normally be constructed by computing hashes for all $n$-grams in a document (for some chosen $n$) and selecting a subset of them, we can retain all the hashes. If we believe that dissimilar code will contain different $n$-grams in different amounts, we can use vectors in the space of $n$-grams to identify submissions. In our investigations with Java source code, however, even after removing irrelevant features such as variable names and considering token-level $n$-grams, the number of different $n$-grams was too large for unsupervised clustering to be effective.
 
-\subsubsection{Function Calls, AST size, and Control Flow}
+\subsubsection{Function Calls, Solution Size, and Control Flow}
 
-Working in collaboration with Singh, we now generate feature vectors for python programs that include the size of different sub-trees of the abstract syntax tree (AST), the control flow of the program, and the usage of python libraries and constructs. In total, we computed around $60$ features for the python programs, the details of which are listed in the Appendix. Some of these features include: number of program variables, number of conditional and loop statements, type of comparisons, number of AST nodes, the control structure of if-loop statements, number and type of library functions used etc.
+Working in collaboration with Singh, we now generate feature vectors for python programs that include the size of different sub-trees of the abstract syntax tree (AST), the control flow of the program, and the usage of python libraries and constructs. In total, we computed around $60$ features for the python programs. Some of these features include: number of program variables, number of conditional and loop statements, type of comparisons, number of AST nodes, the control structure of if-loop statements, number and type of library functions used etc.
 
-Figure~\ref{comp-deriv-diff-attempts} shows a small sample of student attempts for the \codevar{comp-deriv} problem. The problem asks students to write a python function that returns the derivative of a polynomial whose coefficients are represented as a python list. The two student submissions in Figure~\ref{comp-deriv-diff-attempts}(a) immediately return [0.0] if the length of input polynomial is 1 (base case) , otherwise they return the computed derivative list after removing its first element. The two submissions use similar control flow structure, same number of \codevar{return} statements and the library function \codevar{append}, but use list splicing and \codevar{pop} library functions respectively for removing the first element from the derivative list. The two student submissions in Figure~\ref{comp-deriv-diff-attempts}(b) perform len(poly)-1 number of iterations first to compute the derivative list and then add [0.0] to the empty result for the base case. They again have similar control flow structure, same number of \codevar{return} statements, and similar \codevar{range} function usage. The student submission in Figure \ref{comp-deriv-diff-attempts}(c) shows a solution that computes the derivative list by popping elements out of the input list and returns when the length of input list becomes 1, whereas Figure~\ref{comp-deriv-diff-attempts}(d) shows a submission that uses list comprehension.
+The Python AST size is analogous to the Matlab parse tree size which collaborator Ned Gully found to be helpful in visualizing and distinguishing between Matlab solutions, as shown in the next section.
 
-
-
-\begin{figure*}[!htpb]
-\begin{tabular}{c|c|c}
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-    powers = len(poly)
-    if powers == 1: 
-        return [0.0]
-    deriv = []
-    for i in range(powers):
-        deriv.append(poly[i]*i)
-    return deriv[1:]
-\end{lstlisting}
-\end{minipage}
-&
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-    ans = []
-    for i in range(1,len(poly)):
-        ans.append(i*poly[i])
-    if ans == []:
-        ans = [0.0]
-    return ans
-\end{lstlisting}
-\end{minipage}
-
-&
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-    idx = 1
-    res = list([])
-    if len(poly) == 1:
-        return [0.0]
-    while idx <= len(poly):
-        coeff = poly.pop(1)
-        res.append(coeff*idx)
-        idx = idx + 1
-        if len(poly) < 2:
-            return res
-\end{lstlisting}
-\hspace*{30mm} (c)
-\end{minipage}
-
-\\
-
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-    if len(poly) > 1:
-        res = []
-    else: return [0.0]
-    for i in range(len(poly)):
-        res.append(poly[i]*i)
-    res.pop(0)
-    return res
-\end{lstlisting}
-\end{minipage}
-&
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-    result = []
-    for i in range(1,len(poly)):
-        result.append(i*poly[i])
-    if len(result) == 0:
-        result.append(0.0)
-    return result
-\end{lstlisting}
-\end{minipage}
-
-&
-\begin{minipage}{.32\linewidth}
-\begin{lstlisting}[language=python]
-def computeDeriv(poly):
-      if len(poly) == 1:
-        return [0.0]
-    newList = [ poly[i] * i for i in range(1, len(poly))]
-    return newList
-\end{lstlisting}
-\end{minipage}
-\\
-(a) & (b) & (d)
-\end{tabular}
-\caption{A sample of student submissions for the \codevar{comp-deriv} problem showing both similar and different implementations. (a) Two student submissions that immediately return [0.0] if the length of input polynomial is 1 (base case) and return the computed derivative list after removing the first element. (b) Two student submissions that perform len(poly)-1 number of iterations first to compute the desired derivative and adds [0.0] to the empty result in the end. (c) A student solution iterating by popping elements out of the input list and returning when the length of list becomes 1. (d) A student solution using list comprehension.}
-\label{comp-deriv-diff-attempts}
-\end{figure*}
+In JSIM, the hardware description language, students can wire together MOSFETs to form subcircuits. Subcircuits can also contain other subcircuits. The internal wiring diagram of each subcircuit can be represented as a graph, where internal nodes and devices become graph nodes. Using Matlab's graph isomorphism function in the Bioinformatics toolbox, I collected a library of all the topologically distinct subcircuits across all correct submitted implementations of the 4-bit adder. Similarly to how the number of calls to various library functions in Python became features for the python dataset, the number of declarations of each topologically distinct subcircuit in our library is used to represent each student's 4-bit adder submission.
 
 
 \subsection{Visualization}
@@ -528,55 +455,55 @@ One can see in the histogram of solutions by size, quantified by the number of M
 \label{4bitAdders}
 \end{figure}
 
+\subsubsection{Assisting Students to Completion and Encouraging Revision}
+
+As of the beginning of the Spring 2013 term, the 6.004 course software now saves complete snapshots of student solutions-in-progress whenever a student saves or runs tests. Over the course of these snapshots, each solution-in-progress evolves into a complete solution employing one of possibly several distinct, correct strategies. Informative features of partial solutions would enable supervised machine learning algorithms to successfully predict which strategy a particular solution-in-progress will evolve toward. I hope to demonstrate generality on similar datasets from 6.005, a software engineering course which also has collected snapshot sequences of students' code.
 
 \subsection{Mathematical Modeling}
 
-Once feature vectors are composed for each solution in a dataset, it is possible to apply machine learning and other mathematical modeling techniques to cluster the data or otherwise extract relationships between solutions and between features. As an initial exploration of feasibility, Rishabh Singh and I applied an unsupervised clustering method to 6.00x Python submissions. 6.00x is a Massively Open Online Course, or MOOC, that serves as an introduction to programming.
+Once feature vectors are composed for each solution in a dataset, it is possible to apply machine learning and other mathematical modeling techniques to cluster the data or otherwise extract relationships between solutions and between features. As an initial exploration of feasibility, Rishabh Singh and I applied $k$-means, an unsupervised clustering method, to feature vectors representing correct 6.00x Python submissions and separately to feature vectors representing 6.004 4-bit adders written in JSIM. We compared the $k$-means clusterings to each human expert's clusterings, and also compared the human expert-generated clusterings' adjusted mutual information with each other. The clusterings of Python solutions produced by $k$-means were comparable to human clusterings, with respect to this metric. However, the clusterings of 4-bit adders did not. This has triggered a re-design of the features computed for JSIM submissions.
 
-Singh obtained thousands of submissions to the course exercises during the Fall 2012 course offering. We filtered out all incorrect submissions, as indicated by input-output testing, so that we could focus on variations in correct solutions. The number of correct submissions analyzed for each problem is shown in Table. \ref{table-edx-probs}. The MOOC platform provided a web-interface for students to write and test their code in the browser itself, and students were provided 30 attempts to submit their solutions for each of the exercises.
-
-\begin{table}
-\begin{tabular} {|c|c|c|}
-\hline
-\tabhead{Problem Description} & \tabhead{Total Submissions} & \tabhead {Correct Submissions} \\ \hline
-\codevar{comp-deriv} & 3013 & 1433 \\ \hline
-\codevar{hangman-guess} & 1746 & 1118 \\ \hline
-\codevar{iter-power} & 8940 & 3875 \\ \hline
-\end{tabular}
-\caption{Dataset of 6.00x problems from Fall 2012.}
-\label{table-edx-probs}
-\end{table}
-
-The \codevar{comp-deriv} and \codevar{hangman-guess} problems were part of week 3 problem set exercises, whereas \codevar{iter-power} was an in-lecture exercise for the lecture on iteration. The \codevar{comp-deriv} problem requires students to write a python function to compute the derivative of a polynomial, where the coefficients of the polynomial are represented as a python list. The \codevar{hangman-guess} problem takes a string \codevar{secretWord} and a list of characters \codevar{lettersGuessed} as input, and asks students to write a function that returns a string where all letters in \codevar{secretWord} that are not present in the list \codevar{lettersGuessed} are replaced with an underscore. The \codevar{iter-power} problem asks students to write a function to compute the exponential $\codevar{base}^\codevar{exp}$ iteratively using successive multiplication.
-
+Going forward, I would like experiment with supervised machine learning methods, including the same supervised, intermittently active learning process that Jenna Wiens successfully used on cardiac data \cite{JWiens}. This allowed experts to label a relatively small number of examples, while still generating high classification accuracy. This method is patient-specific, which may be transferrable to the domain of students solutions where we will likely need problem-specific classifiers.
 
 \subsection{Human-Computer Interaction}
 
-After repeating this process on several domains and tasks within those domains, including 6.004's design assignments written in a hardware description language and 6.00x's software designs written in Python, I propose to generalize the experience and build a tool for teachers which supports this kind of exploratory analysis of student solutions regardless of the teachers' specific domain and assignment. The eligible space of domains this could potentially generalize to are ones in which solutions are submitted as machine-readable code and where assignments have a specification that the student's solution must meet, but give the student a broad range of freedom for the internal design of that solution.
+After repeating this process on several domains and tasks within those domains, including 6.004's design assignments written in a hardware description language and 6.00x's software designs written in Python, I propose to generalize the experience and build a tool for teachers which supports this kind of exploratory analysis of student solutions regardless of the teachers' specific domain and assignment. 
 
-The exploratory data analysis and feature selection will power machine learning tools, such as clustering algorithms, potentially including active/interactive machine learning modules for teachers to correct the systems' classification of new solutions. 
+The eligible space of domains this could potentially generalize to are ones in which solutions are submitted as machine-readable code and where assignments have a specification that the student's solution must meet, but give the student a broad range of freedom for the internal design of that solution. The exploratory data analysis and feature selection will power machine learning tools, such as clustering algorithms and interactive machine learning modules for teachers to correct the systems' classification of new solutions. 
 
-\subsubsection{Evaluation}
+\subsection{Generating Data-Driven Assistance}
+
+In addition to contributing to teachers' and students' understandings of the solution space, it is also possible to use solution path recognition to inform peer-pairing. The most straightforward strategy is to pair students whom the system predicts are on {\em similar} paths to a solution. 
+
+Developing classifiers trained to identify various solution types also enables teachers to ``force-multiply'' \cite{Standfordfolks} their feedback. When teacher(s) observe a new cluster within the interface to their students' submissions, they can write custom feedback messages that are propagated to all current and future students whose solutions fall into that cluster. These messages can critique the approach, address a bug, or encourage a re-design and resubmission for additional points or prestige, similar to the two-stage feedback currently used in 6.005 code submissions.
+
+Solution path recognition can inform more automated forms of assistance as well. By incorporating all known solutions as reference solutions in Singh et al's AutoGrader \cite{rishabh}, the authors of that work believe it may be possible to overcome its current inability to consider which distinct solution an solution is closest to. Alternatively, code differences between a code snapshot in an unfinished solution path and the nearest code snapshot that belongs to a completed path may be a more simple form of automated help when a student has exhausted all other resources. % in addition to input-output behavior.
+
+\subsection{Evaluation}
+
+\subsubsection{Measuring Teachers' Understanding of the Space of Student Solutions}
 
 In order to evaluate the contribution of this interactive data visualization environment for teaching staff, I will run a user study on staff members of courses, at MIT and possibly other institutions, in which the student submissions are in machine-readable code and there is non-trivial latitude given to students for the internal solution design. By interacting with representations of many students solutions' at once, users will attempt to identify clusters. If staff independently find similarly meaningful, persistent patterns in their students' solutions using the tool, I will consider it a success. I will also follow up with qualitative interviews with course staff who did and did not use the tool, about their understanding of the space of solutions to a particular assignment they are aware of, after the conclusion of that assignment.
 
-\subsubsection{Adaptation for Students}
+\subsubsection{Representing the Solution Space for Learners}
 
-Inspired by both the literature on the educational value of comparing and constrasting alternative designs, as well as a personal desire to incorporate higher level discussions of design choices and trade-offs into CompArch, among other classes, I will adapt the teacher-targeted exploratory data analysis and visualization tool into a student-targeted explanatory data visualization tool. This tool will show students where their solution lies in the space of solutions. The role of this visualization will be to serve as a rich conversation piece over which students and staff, and also eventually student pairs and small groups, can discuss design decisions and solutions that are alternatives to their own. 
+Inspired by both the literature on the educational value of comparing and constrasting alternative designs, as well as a personal desire to incorporate higher level discussions of design choices and trade-offs into 6.004, among other classes, I will adapt the teacher-targeted exploratory data analysis and visualization tool into a student-targeted explanatory data visualization tool. This tool will show students where their solution lies in the space of solutions. The role of this visualization will be to serve as a rich conversation piece over which students and staff, and also eventually student pairs and small groups, can discuss design decisions and solutions that are alternatives to their own. 
 
 One measure of the success of this tool will be to quantify the accuracy and comprehensiveness of short written statements comparing and constrasting students' own solutions with other solutions. If the accuracy and comprehensiveness of self-reflective statements are higher when a student can interact with the visualization tool than when students are given a portfolio of printed out raw code examples to leaf through, then I can conclude that the visualization provides student-accessible information.
 
-\subsection{Solution Path Recognition}
+\subsubsection{Evaluating Data-Based Interventions}
+
+By comparing metrics of students' progression toward a solution when paired based on solution paths, relative to random pairing and no pairing, I can measure the interventions' effect on the completion of the current lab and subsequent related labs. A similar process can be applied to students who receive automated help based on the identification of which of multiple solutions that student appears to be pursuing.
 
 %In CompArch, we capture snapshots of students' intermediate code as they work. One semester's data has been collected already. 
 
-As of the beginning of the Spring 2013 term, the CompArch course software now saves complete snapshots of student solutions-in-progress whenever a student saves or runs tests. Over the course of these snapshots, each solution-in-progress evolves into a complete solution employing one of possibly several distinct, correct strategies. Informative features of partial solutions would enable supervised machine learning algorithms to successfully predict which strategy a particular solution-in-progress will evolve toward. I hope to demonstrate generality on similar datasets from 6.005, a software engineering course which also has collected snapshot sequences of students' code.
 
-%When it is not. However, if common strategies have already been identified from analysis of previous students' solutions, a teacher could hand-write a multiple choice question or two inquiring at a high level about the strategy of the student. This extends from the solution-space-informed question I now ask help-seeking students working on the CompArch Turning Machine Lab \cite{ICERGlassman}.
 
-Solution path recognition can inform peer-pairing. There are a variety of possible solution path-dependent pairing strategies; however, the most straightforward strategy to employ first is to pair students whom the system predicts are on {\em similar} paths to a solution. By comparing metrics of students' progression toward a solution when paired based on solution paths, relative to random pairing and no pairing, I can measure the interventions' effect on the completion of the current lab and subsequent related labs.
+%When it is not. However, if common strategies have already been identified from analysis of previous students' solutions, a teacher could hand-write a multiple choice question or two inquiring at a high level about the strategy of the student. This extends from the solution-space-informed question I now ask help-seeking students working on the 6.004 Turning Machine Lab \cite{ICERGlassman}.
 
-Solution path recognition can inform automated forms of assistance as well. By incorporating all known solutions as reference solutions in Singh et al's AutoGrader \cite{rishabh}, the authors of that work believe it may be possible to overcome its current inability to consider which distinct solution an solution is closest to. Alternatively, code differences between a code snapshot in an unfinished solution path and the nearest code snapshot that belongs to a completed path may be a more simple form of automated help when a student has exhausted all other resources. % in addition to input-output behavior.
+
+
+
 
 %My approach will be to visualize hundreds or thousands of student solutions to discover alternatives, and then classify the path that students take to each solution, either by machine learning or human staff. The classifications will inform assistance given to students, in the form of staff-student discussions, peer-pairing, and automated help. 
 
@@ -594,11 +521,11 @@ Solution path recognition can inform automated forms of assistance as well. By i
 
 \section{EXPECTED CONTRIBUTIONS}
 
-\textcolor{red}{I hope to discover the qualities of critical features of coding assignments in the course of this research, and a process by which teachers can identify specific critical features in their own settings.}
+I hope to discover the qualities of critical features of coding assignments in the course of this research, and a process by which teachers can identify specific critical features in their own settings. This process, instantiated as a software tool, will helps teachers across multiple domains discover the full space of alternatives and recognize novel or better solutions in their students' solutions. I also expect to extend the software to help students understand alternative design choices and their tradeoffs, and reach their envisioned (valid) solutions.
 
 %This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
-There are two end-users of the proposed software systems. I expect to create a software which helps teachers across multiple domains discover the full space of alternatives and recognize novel or better solutions in their students' solutions. I also expect to build software that help students understand alternative design choices and their tradeoffs, and reach their envisioned (valid) solutions.
+%There are two end-users of the proposed software systems. I expect to create a software which helps teachers across multiple domains discover the full space of alternatives and recognize novel or better solutions in their students' solutions. I also expect to build software that help students understand alternative design choices and their tradeoffs, and reach their envisioned (valid) solutions.
 
 While the tangible deliverables will be specific instances of software, I will report on the generalizability of visualization and classification of the multiple solutions as a tool for improving hints and answers to students' questions, whether they are provided by peers, staff, or automation. I will also report on the character of ``critical features'' found to be helpful for understanding the space of solutions, the methods by which students were brought to reason and comprehend design alternatives, and how peers can be effectively paired within a space where individual solutions can vary widely.
 
@@ -618,10 +545,10 @@ While the tangible deliverables will be specific instances of software, I will r
 \section{TIMELINE}
 
 \begin{itemize}
-\item {\bf Fall '13} Deploy server-based D3 visualizations of working student submissions in the context of last years' working submissions during check-offs with me in 6.004. Log interactions with the visualization and record conversations with students while they compare their design to other options. Explore the generalization of the visualizations to representing Java exercises completed in 6.005 during past semesters. Explore use of Rishabh Singh's autograder for JSIM, and note what gaps in feedback arise from its current sole consideration on input-output behavior.
-\item {\bf Spring '14} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, interviewing them on their knowledge of the solution space pre- and post-interaction with the visualization. Add machine learning components as necessary, for helping humans identify patterns. Explore use for partial as well as completed labs. Iterate with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. Work with Singh to augment his autograder so that it gives feedback informed by which of several solutions a student is "closest" to.
+\item {\bf Fall '13} Deploy server-based D3 visualizations of working student submissions in the context of last years' working submissions during check-offs with me in 6.004. Log interactions with the visualization and record conversations with students while they compare their design to other options. %Explore the generalization of the visualizations to representing Java exercises completed in 6.005 during past semesters. Explore use of Rishabh Singh's autograder for JSIM, and note what gaps in feedback arise from its current sole consideration on input-output behavior.
+\item {\bf Spring '14} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, interviewing them on their knowledge of the solution space pre- and post-interaction with the visualization. Add machine learning components as necessary, for helping humans identify patterns. Explore use of teacher-written force-multiplied feedback to partial as well as completed labs. Iterate with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Work with Singh to augment his autograder so that it gives feedback informed by which of several solutions a student is "closest" to.
 \item {\bf Summer '14} Do an internship outside Boston, probably focusing on the visual presentation of information.
-\item {\bf Fall '15} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, and auto-suggest peer-pairings for students based on partial solutions. Compare solution paths for students experiencing auto-suggested peer assistance versus staff assistance. Continue iterating with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. Deploy Singh's modified autograder in 6.004.
+\item {\bf Fall '15} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, and auto-suggest peer-pairings for students based on partial solutions. Compare solution paths for students experiencing auto-suggested peer assistance versus staff assistance. Continue iterating with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Deploy Singh's modified autograder in 6.004.
 \item {\bf Spring '15} Write thesis. Tie up loose ends. Defend thesis. Celebrate. Graduate!
 \end{itemize}
 
@@ -630,6 +557,103 @@ This work is supported by the National Science Foundation Graduate Research Fell
 
 \bibliographystyle{abbrv}
 \bibliography{icerbib}
+
+\begin{comment}
+\section{Appendix}
+
+Figure~\ref{comp-deriv-diff-attempts} shows a small sample of student attempts for the \codevar{comp-deriv} problem. The problem asks students to write a python function that returns the derivative of a polynomial whose coefficients are represented as a python list. The two student submissions in Figure~\ref{comp-deriv-diff-attempts}(a) immediately return [0.0] if the length of input polynomial is 1 (base case) , otherwise they return the computed derivative list after removing its first element. The two submissions use similar control flow structure, same number of \codevar{return} statements and the library function \codevar{append}, but use list splicing and \codevar{pop} library functions respectively for removing the first element from the derivative list. The two student submissions in Figure~\ref{comp-deriv-diff-attempts}(b) perform len(poly)-1 number of iterations first to compute the derivative list and then add [0.0] to the empty result for the base case. They again have similar control flow structure, same number of \codevar{return} statements, and similar \codevar{range} function usage. The student submission in Figure \ref{comp-deriv-diff-attempts}(c) shows a solution that computes the derivative list by popping elements out of the input list and returns when the length of input list becomes 1, whereas Figure~\ref{comp-deriv-diff-attempts}(d) shows a submission that uses list comprehension.
+
+
+
+\begin{figure*}[!htpb]
+\begin{tabular}{c|c|c}
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+    powers = len(poly)
+    if powers == 1: 
+        return [0.0]
+    deriv = []
+    for i in range(powers):
+        deriv.append(poly[i]*i)
+    return deriv[1:]
+\end{lstlisting}
+\end{minipage}
+&
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+    ans = []
+    for i in range(1,len(poly)):
+        ans.append(i*poly[i])
+    if ans == []:
+        ans = [0.0]
+    return ans
+\end{lstlisting}
+\end{minipage}
+
+&
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+    idx = 1
+    res = list([])
+    if len(poly) == 1:
+        return [0.0]
+    while idx <= len(poly):
+        coeff = poly.pop(1)
+        res.append(coeff*idx)
+        idx = idx + 1
+        if len(poly) < 2:
+            return res
+\end{lstlisting}
+\hspace*{30mm} (c)
+\end{minipage}
+
+\\
+
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+    if len(poly) > 1:
+        res = []
+    else: return [0.0]
+    for i in range(len(poly)):
+        res.append(poly[i]*i)
+    res.pop(0)
+    return res
+\end{lstlisting}
+\end{minipage}
+&
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+    result = []
+    for i in range(1,len(poly)):
+        result.append(i*poly[i])
+    if len(result) == 0:
+        result.append(0.0)
+    return result
+\end{lstlisting}
+\end{minipage}
+
+&
+\begin{minipage}{.32\linewidth}
+\begin{lstlisting}[language=python]
+def computeDeriv(poly):
+      if len(poly) == 1:
+        return [0.0]
+    newList = [ poly[i] * i for i in range(1, len(poly))]
+    return newList
+\end{lstlisting}
+\end{minipage}
+\\
+(a) & (b) & (d)
+\end{tabular}
+\caption{A sample of student submissions for the \codevar{comp-deriv} problem showing both similar and different implementations. (a) Two student submissions that immediately return [0.0] if the length of input polynomial is 1 (base case) and return the computed derivative list after removing the first element. (b) Two student submissions that perform len(poly)-1 number of iterations first to compute the desired derivative and adds [0.0] to the empty result in the end. (c) A student solution iterating by popping elements out of the input list and returning when the length of list becomes 1. (d) A student solution using list comprehension.}
+\label{comp-deriv-diff-attempts}
+\end{figure*}
+\end{comment}
 
 %\bibliographystyle{abbrvurl}
 %%\bibliography{biblio} Edit the name of your bib file here and delete the refs below.
