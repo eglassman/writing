@@ -184,7 +184,7 @@ The most recent relevant work on finding clusters in solutions comes from Stanfo
 
 \textcolor{red}{EXPLAIN WHAT IML IS, BASED ON IML COURSE INTRO LECTURE.}
 
-An active/interactive machine learning technique, which take advantage of human experts in the loop to resolve uncertainties, have been deployed for de-duplication in Stonebraker et al.'s Data Tamer \cite{DataTamer} and in a cardiac EGG-based alarm system\cite{JWiens}. \textcolor{red}{DETAILS.}
+An active/interactive machine learning technique, which take advantage of human experts in the loop to resolve uncertainties, have been deployed for de-duplication in Stonebraker et al.'s Data Tamer \cite{stonebraker2013data} and in a cardiac EGG-based alarm system\cite{JWiensNIPS}. \textcolor{red}{DETAILS.}
 
 \subsubsection{Probabalistic Approaches}
 
@@ -463,7 +463,7 @@ As of the beginning of the Spring 2013 term, the 6.004 course software now saves
 
 Once feature vectors are composed for each solution in a dataset, it is possible to apply machine learning and other mathematical modeling techniques to cluster the data or otherwise extract relationships between solutions and between features. As an initial exploration of feasibility, Rishabh Singh and I applied $k$-means, an unsupervised clustering method, to feature vectors representing correct 6.00x Python submissions and separately to feature vectors representing 6.004 4-bit adders written in JSIM. We compared the $k$-means clusterings to each human expert's clusterings, and also compared the human expert-generated clusterings' adjusted mutual information with each other. The clusterings of Python solutions produced by $k$-means were comparable to human clusterings, with respect to this metric. However, the clusterings of 4-bit adders did not. This has triggered a re-design of the features computed for JSIM submissions.
 
-Going forward, I would like experiment with supervised machine learning methods, including the same supervised, intermittently active learning process that Jenna Wiens successfully used on cardiac data \cite{JWiens}. This allowed experts to label a relatively small number of examples, while still generating high classification accuracy. This method is patient-specific, which may be transferrable to the domain of students solutions where we will likely need problem-specific classifiers.
+Going forward, I would like experiment with supervised machine learning methods, including the same supervised, intermittently active learning process that Jenna Wiens successfully used on cardiac data \cite{JWiensNIPS}. This allowed experts to label a relatively small number of examples, while still generating high classification accuracy. This method is patient-specific, which may be transferrable to the domain of students solutions where we will likely need problem-specific classifiers.
 
 \subsection{Human-Computer Interaction}
 
@@ -473,9 +473,17 @@ The eligible space of domains this could potentially generalize to are ones in w
 
 \subsection{Generating Data-Driven Assistance}
 
-In addition to contributing to teachers' and students' understandings of the solution space, it is also possible to use solution path recognition to inform peer-pairing. The most straightforward strategy is to pair students whom the system predicts are on {\em similar} paths to a solution. 
+In addition to contributing to teachers' and students' understandings of the solution space, it is also possible to use solution cluster classifiers and solution path recognition to provide semi- and completely automated assistance to students. There are multiple possible projects which would explore the value of this kind of assistance, which is informed by the existence of multiple solutions. While it is unclear which project(s) will ultimately become part of the thesis product, I will enumerate the current possibilities here. Most of these projects would be tight collaborations with other researchers at CSAIL.
 
-Developing classifiers trained to identify various solution types also enables teachers to ``force-multiply'' \cite{Standfordfolks} their feedback. When teacher(s) observe a new cluster within the interface to their students' submissions, they can write custom feedback messages that are propagated to all current and future students whose solutions fall into that cluster. These messages can critique the approach, address a bug, or encourage a re-design and resubmission for additional points or prestige, similar to the two-stage feedback currently used in 6.005 code submissions.
+The first is the possibility of ``force-multiplying'' \cite{MOOCshop} teachers' feedback, based on discovered clusters. When teacher(s) observe a new cluster in their students' submissions, they can write a custom feedback message that is propagated to all current and future students whose solutions fall into that cluster, as determined by the teacher-trained classification algorithms. These messages can critique the approach, address a bug, or encourage a re-design and resubmission for additional points or prestige, similar to the two-stage feedback currently used in 6.005 code submissions. 
+
+An future M.Eng. student in my research group is working on helping TAs send custom feedback messages to multiple students, based on a common error, in 6.005's code-reviewing software, Ceasar. This system could be combined with my cluster-discovery interface for force-multiplying solution-based feedback to students in an existing class.
+
+The lecturer for 6.005 has also built a continuous build system, called Didit, to which students are encouraged to commit often. It provides them with feedback messages, as well as grades. It could be an alternative system in which to integrate solution identification for the purposes of distributing solution-specific feedback to students.
+
+Yet another possible feedback mechanism to students is using knowledge of the solution space to inform peer-pairing, when staff are busy or not present. Hubert Pham, while leaving CSAIL, has rewritten the 6.004 help queue software with the future application of a peer-pairing option in mind. Peer-pairing could be done by human inspection of solutions, or by teacher-trained solution classifiers. The most straightforward strategy to pair students whom the system predicts are on {\em similar} paths to a solution. 
+
+% Developing classifiers trained to identify various solution types enables teachers to force-multiply their feedback. 
 
 Solution path recognition can inform more automated forms of assistance as well. By incorporating all known solutions as reference solutions in Singh et al's AutoGrader \cite{rishabh}, the authors of that work believe it may be possible to overcome its current inability to consider which distinct solution an solution is closest to. Alternatively, code differences between a code snapshot in an unfinished solution path and the nearest code snapshot that belongs to a completed path may be a more simple form of automated help when a student has exhausted all other resources. % in addition to input-output behavior.
 
@@ -521,7 +529,9 @@ By comparing metrics of students' progression toward a solution when paired base
 
 \section{EXPECTED CONTRIBUTIONS}
 
-I hope to discover the qualities of critical features of coding assignments in the course of this research, and a process by which teachers can identify specific critical features in their own settings. This process, instantiated as a software tool, will helps teachers across multiple domains discover the full space of alternatives and recognize novel or better solutions in their students' solutions. I also expect to extend the software to help students understand alternative design choices and their tradeoffs, and reach their envisioned (valid) solutions.
+I hope to discover the qualities of critical features of coding assignments in the course of this research, develop a process by which teachers can identify specific critical features and solution clusters in their own settings, and then channel that understanding back into an enhanced student experience. More specifically, this process, instantiated as stand-alone software tools, web applications, or plug-ins to existing systems, will help teachers across multiple domains discover the full space of alternatives, recognize novel or better solutions in their students' solutions, and provide feedback to students that is informed by that knowledge. I also hope to extend the software to help students understand alternative design choices and their tradeoffs.
+
+%, and reach their envisioned (valid) solutions.
 
 %This research may be particularly helpful to staff who focus on helping each student reach their own envisioned solution. The algorithms, tools, visualizations, and resulting insights from this work are intended to support this constructivist approach to teaching, facilitate students helping each other, and inform automated feedback.
 
@@ -545,15 +555,15 @@ While the tangible deliverables will be specific instances of software, I will r
 \section{TIMELINE}
 
 \begin{itemize}
-\item {\bf Fall '13} Deploy server-based D3 visualizations of working student submissions in the context of last years' working submissions during check-offs with me in 6.004. Log interactions with the visualization and record conversations with students while they compare their design to other options. %Explore the generalization of the visualizations to representing Java exercises completed in 6.005 during past semesters. Explore use of Rishabh Singh's autograder for JSIM, and note what gaps in feedback arise from its current sole consideration on input-output behavior.
-\item {\bf Spring '14} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, interviewing them on their knowledge of the solution space pre- and post-interaction with the visualization. Add machine learning components as necessary, for helping humans identify patterns. Explore use of teacher-written force-multiplied feedback to partial as well as completed labs. Iterate with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Work with Singh to augment his autograder so that it gives feedback informed by which of several solutions a student is "closest" to.
-\item {\bf Summer '14} Do an internship outside Boston, probably focusing on the visual presentation of information.
-\item {\bf Fall '15} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, and auto-suggest peer-pairings for students based on partial solutions. Compare solution paths for students experiencing auto-suggested peer assistance versus staff assistance. Continue iterating with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Deploy Singh's modified autograder in 6.004.
+\item {\bf Fall '13} Deploy visualizations of correct student submissions during check-offs with me in 6.004. Log interactions with the visualization and record conversations with students while they compare their design to other options. Engineer features of JSIM, Python, Java, and/or Matlab that capture the information that humans appear to use when clustering raw code submissions by hand. %Explore the generalization of the visualizations to representing Java exercises completed in 6.005 during past semesters. Explore use of Rishabh Singh's autograder for JSIM, and note what gaps in feedback arise from its current sole consideration on input-output behavior.
+\item {\bf Spring '14} Use Bose Fellowship to improve and deploy visualization web applications for LAs and TAs, interview them on their knowledge of the solution space pre- and post-interaction with the visualization. Add machine learning components as necessary, for helping humans identify patterns. Explore use of teacher-written force-multiplied feedback to partial as well as completed labs. Experiment with teacher-based peer-pairing. %Iterate with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Work with Singh to augment his autograder so that it gives feedback informed by which of several solutions a student is "closest" to.
+\item {\bf Summer '14} Complete an internship outside Boston, within the space of ML and HCI.
+\item {\bf Fall '15} Use Bose Fellowship to improve and deploy visualization web applications for all interested LAs and TAs, continue experimentation with force-multiplication mechanisms in 6.004 or 6.005, and attempt auto-suggestion of peer-pairings for students based on partial solutions. Compare student outcomes based on whether and which assistance type they receive. %Compare solution paths for students experiencing auto-suggested peer assistance versus staff assistance. Continue iterating with 6.005 staff on visualizations of Java exercises that suit their course and classroom needs. %Deploy Singh's modified autograder in 6.004.
 \item {\bf Spring '15} Write thesis. Tie up loose ends. Defend thesis. Celebrate. Graduate!
 \end{itemize}
 
 \section{Acknowledgments}
-This work is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374 and the MIT Amar Bose Teaching Fellowship. It has also been made possible by countless discussions and pair-research sessions with fellow members of CSAIL HCI, Prof. Leslie Kaelbling, Prof. Chris Terman, and Marty Glassman.
+This work is supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1122374 and the MIT Amar Bose Teaching Fellowship. It has also been made possible by countless discussions and pair-research sessions with fellow members of CSAIL HCI, Prof. Leslie Kaelbling, Prof. Chris Terman, Prof. John Guttag, and Marty Glassman.
 
 \bibliographystyle{abbrv}
 \bibliography{icerbib}
