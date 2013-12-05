@@ -77,7 +77,7 @@ numbers=none, xleftmargin=.1in, numbersep=3pt
 \begin{document}
 
 %\pagestyle{empty}
-\title{Dealing with Multiple solutions of Design Problems: \\Mining Student-Generated Alternatives}
+\title{Mining Student-Generated Alternative Implementations}
 
 %\numberofauthors{1}
 \author{Elena Glassman \\ MIT CSAIL \\ \textit{elg@mit.edu}
@@ -164,13 +164,25 @@ Given Marton et al.'s rubric for effective patterns of variation, and the identi
 
 While this research has focused on the effects of multiple, varying examples on student learning, it is also, as suggested by Luxton-Reilly et al. \cite{Luxton13}, helpful for teachers' own understanding and quality of feedback and guidance. Facilitating the discovery or identification of critical features, which are possibly both teacher-specific and task-specific, is a major challenge I will address in this thesis.
 
-\subsection{Thematic Analysis/Grounded Theory}
+\subsection{Feature Engineering}
 
-\textcolor{red}{Explain what it is}
+In order to discover or identify critical features, it is necessary to generate a set of candidate features. A variety of methods have been employed in the literature to select or engineer features, but those which I describe here are focused on features that humans can perceive by looking at the actual code submission.
+
+Aggarwal et. al. \cite{aggarwalprinciples} addresses the critical nature of feature engineering in the context of machine-learning-based automated grading. The grading rubric is based on the authors' understanding of how humans perceive and assess programs. They describe how humans first look for certain ``signature features,'' such as certain control structures, dependencies, and keywords. If the necessary features are in place, then more fine-grained assessment can take place. Are the correct structures used, and are statements ordered properly? This increasingly fine-grained assessment can continue on, to include terminating conditions and dependences between data structures, until the human is satisfied. 
+
+In order to extract these features, Aggarwal et. al. suggest extraction from a submission's Abstract Syntax Tree, Control Flow Graph, Data Dependence Graph, and/or Program Dependence Graph. The authors assert that these graphs will be helpful even if the code represents only a partial solution. Note that these features are targeted at labeling each solution with a numerical score based on correctness, not on disguishing between equally correct solutions representing different approaches to a problem.
+
+%, human considerations are weighed heavily in their feature design.
+
+%\subsubsection{Thematic Analysis/Grounded Theory}
+%
+%\textcolor{red}{Explain what it is}
 
 Luxton-Reilly et al. \cite{Luxton13} takes this approach to discovering the kinds and degree of variation between student generated solutions that fulfilled the specifications of short introductory programming exercises in Java . By thematic analysis \cite{thematic06} of student submissions, the authors generated a taxonomy that captures the variation between correct solutions in their dataset. They created an Eclipse plug-in for classifying new code examples based on their taxonomy. \textbf{Make plugin description concrete and accurate}
 
 \subsection{Mathematical Modeling Applied to Solutions}
+
+While critical features are chosen based on their ability to enhance teachers' understanding or guide the choice of example solutions, it is also necessary to select features that support classification or clustering. Specifically, it is necessary to select features that support classification or clustering that is understandable and acceptable to the human in the loop.
 
 \subsubsection{Supervised ML}
 
@@ -184,7 +196,9 @@ The most recent relevant work on finding clusters in solutions comes from Stanfo
 
 \textcolor{red}{EXPLAIN WHAT IML IS, BASED ON IML COURSE INTRO LECTURE.}
 
-An active/interactive machine learning technique, which take advantage of human experts in the loop to resolve uncertainties, have been deployed for de-duplication in Stonebraker et al.'s Data Tamer \cite{stonebraker2013data} and in a cardiac EGG-based alarm system\cite{JWiensNIPS}. \textcolor{red}{DETAILS.}
+An active/interactive machine learning technique, which take advantage of human experts in the loop to resolve uncertainties, have been deployed for de-duplication in Stonebraker et al.'s Data Tamer \cite{stonebraker2013data} and in a cardiac EGG-based alarm system\cite{JWiensNIPS}. \textcolor{red}{DETAILS.} 
+
+The work on applying interactive machine learning to the educational context is not as mature, but actively being persued. For example, Basu et. al. \cite{basupowergrading} have simulated an interactive machine learning framework for helping teachers grade large numbers of clustered free response textual answers.
 
 \subsubsection{Probabalistic Approaches}
 
@@ -238,7 +252,7 @@ Peer-pairing can stand in place of staff assistance, to both reduce the load on 
 
 Generating tailored feedback to students in large classes tackling problems even as short as introductory programming assignments requires many man-hours of repetitive work. Singh et al. \cite{rishabh} are pushing the state of the art of automated feedback for short introductory programming assignments. However, their software is currently only differentiating between solutions based on their input-output characteristics. For example, this system cannot currently differentiate between two different sorting algorithms. If there are common dead-ends that have been identified by looking at incorrect student solutions to a particular problem, by hand, this system can identify that a student is very close to a known dead-end approach, but it cannot identify {\em which} functionally equivalent variant of a correct solution a student is approaching. 
 
-Singh et al.'s automated feedback represents the one end of the spectrum for providing tailored feedback to students because hints are algorithmically generated; Huang et al. \cite{MOOCshop} represents the other end, by ``force multiplying'' human-generated feedback. By clustering syntactically similar solutions which fail on the same input-output tests, Huang et al. aim to enable the sending of appropriate teacher-written feedback to entire clusters of solutions.
+Singh et al.'s automated feedback represents the one end of the spectrum for providing tailored feedback to students because hints are algorithmically generated. Huang et al. \cite{MOOCshop} and Basu et. al. \cite{basupowergrading} represent the other end, by ``force multiplying'' human-generated feedback or ``powergrading.'' By clustering syntactically similar solutions which fail on the same input-output tests, Huang et al. aim to enable the sending of appropriate teacher-written feedback to entire clusters of solutions. Basu et. al. \cite{basupowergrading} focus their work on grading short textual free-response questions, but the idea of reducing the number of actions necessary for the expert labeler is the same.
 
 %\subsection{Domain of Application}
 %
