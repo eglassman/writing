@@ -1,0 +1,192 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!-- Which section should this abstract be included in?
+   	1.) Architecture, Systems and Networks
+   	-->
+</head>
+<body>
+<div align="center">
+<h3>Fighting Phishing at the User Interface</h3>
+<h4>Min Wu &amp; Robert Miller</h4>
+</div>
+<h5>Motivation</h5>
+<p>
+As people increasingly rely on the Internet to do business, Internet
+fraud becomes a greater and greater threat. Internet fraud uses
+misleading messages online to deceive users into forming a wrong
+belief and induce them to take dangerous actions that compromise their
+own or other people's welfare. The most prevalent kind of Internet
+fraud is <i>phishing</i>. Phishing uses emails and websites, which
+designed to look like emails and websites from legitimate
+organizations, to deceive users into disclosing their personal or
+financial information. The hostile party can then use this information
+for criminal purposes, such as identity theft and fraud. Users can be
+tricked into disclosing their information either by providing
+sensitive information via a web form or downloading and installing
+hostile codes, which search users' computers or monitoring users'
+online activities in order to get information.
+</p>
+<p>Phishing is a <i>semantic attack</i>. Successful phishing depends
+on
+a discrepancy between the way a user perceives a communication, like
+an email message or a web page, and the actual effect of the
+communication. The system model is concerned with how computers
+exchange bits --- protocols, representations, and software. When human
+users play a role in the communication, however, understanding and
+protecting the system model is not enough, since the real message
+communicated depends not on the bits exchanged but on the semantic
+meanings that are derived from the bits. This semantic layer is the
+user's mental model. The effectiveness of phishing indicates that
+human users do not always assign the proper semantic meaning to their
+online interactions. We have to shrink the gap between user's mental
+model and the system model.
+</p>
+<div align="center"><a href="phishing.png"><img src="phishing.png"
+ alt="Diagram of phishing attack" height="415" width="530"></a> </div>
+<h5>Approach</h5>
+<p>
+We propose to use a detection and visualization chain to help keep
+users from being fooled by phishing messages.
+</p>
+<h6>Source Analysis</h6>
+<p>
+When a message arrives at the user's computer, we can subject it to
+<i>source analysis</i>. Just as the first step that a hacker takes
+when preparing to attack a system is footprinting (gathering
+information to construct a profile of the target), we can use the same
+idea in reverse to create a complete profile of the remote party's
+<i>reputation</i>. Possible data sources for this profile include
+WHOIS database, SSL certificate, catalog information from dmoz.org or
+Yahoo! Directory, link popularity and neighborhood from Google, and
+references from trusted third parties, like bbb.org or truste.org. The
+challenge in this part is how to automatically and efficiently
+retrieve, parse, and cross-validate information from different
+sources.
+</p>
+<h6>Presentation Cues</h6>
+<p>
+After the system obtains a profile of the remote server, the browser
+needs to present this information to the user. Many browser toolbars
+have been implemented that inform users directly or indirectly whether
+the current site is phishing or not. Examples include SpoofStick,
+Netcraft toolbar, Trustbar, eBay Account Guard, and SpoofGuard. The
+information displayed by these toolbars can be categorized into three
+types:
+</p>
+<ol>
+  <li> <i>Neutral information</i> about the current website, such as
+the real
+domain name and domain information about when the domain was
+registered and where the domain is hosted; </li>
+  <li> <i>Positive information</i> that can only distinguish secure
+web pages (or
+sites) from other pages (or sites); </li>
+  <li> A <i>system decision</i> about how likely it is that the
+website is
+phishing. </li>
+</ol>
+<p>
+We hypothesize that these toolbars do not effectively prevent phishing
+attacks, for three possible reasons:
+</p>
+<ol>
+  <li> Users may not notice the indicators since their display is
+outside
+the user's locus of attention; </li>
+  <li> Users may not care about the displayed information, since the
+information is about security, which is always a secondary goal when
+users have a job that needs to be done; </li>
+  <li> Users may not understand or believe the indicators, since the
+Internet is well-known for heterogeneity -- in other words, even under <i>safe</i>
+circumstances, web sites display odd, inconsistent
+behavior and bugs -- and heuristic algorithms like spam filters are
+well-known for false positives. </li>
+</ol>
+<p>
+We have done a user study to test the effectiveness of three abstract
+security toolbars, displaying neutral information, positive
+information, and system decisions, respectively. We found that if the
+website's appearance, which is totally controlled by the attacker,
+looks good or not risky, many users (more than 20%) do not take
+seriously or believe the message displayed by the toolbars about
+phishing attacks, regardless of which toolbars they are using.
+</p>
+<p>As a result, we need a new way to display security information.
+Content-integrated visual cues are one possibility we are
+exploring. If the web content is the dominant factor guiding the
+user's decision, we can degrade the content if the system thinks that
+a site is questionable, using a watermark or blurring the
+page. Moreover, content-integrated visual cues can bring warnings
+directly to user's attention at the appropriate time, with enough
+space for detailed explanations.
+</p>
+<h6>Deriving Intentions from Actions</h6>
+<p>
+When the user performs some action, such as filling in a form on a web
+page, the system happily and perfectly encodes the user's action and
+sends it back to the remote server. But it does not attempt to derive
+the user's <i>intention</i> for this action. As a result, the system
+loses an opportunity to understand the user's mental model, and hence
+provide some additional security.
+</p>
+<p>Since most current phishing attacks deceive users into submitting
+their personal data through web forms, monitoring and analyzing
+entries into a web form can identify the data type of user's input,
+whether it is a password, a credit card number, or simply an
+insensitive search term. Moreover, the user interface can be improved
+so that different intentions are tightly bound with different actions
+which can be distinguished by the system. For example, users might be
+able to type insensitive data into web forms, but sensitive data would
+require dragging and dropping a vCard, virtual credit card, or bank
+card onto the form.
+</p>
+<p>If the system still fails to derive user's intention from his
+typing, it can always <i>ask</i> the user. Think about when you want
+to go to an organization's web site but you do not know the exact URL,
+what should you do? Google is a good choice for you to input the
+organization's name and hopefully the intended URL is displayed in the
+first 10 results. We propose to use the same idea here. When the
+browser cannot derive the user's intention, it can display a dialog
+box asking users: "where do you expect this information sent to?"
+Based on the user's answer, the browser can decide if it sends the
+answer as a Google search item directly or if the answer needs some
+pre-processing with common knowledge or context information before it
+is sent to Google. In this way, Google translates user's natural
+language to the URL that the system can understand. Finally, the
+system can use user's intention as a "semantic sandbox" to guide its
+operation.
+</p>
+<h5>Evaluation</h5>
+<p>
+The anti-phishing detection and visualization chain will be evaluated
+in two ways. The chain should effectively prevent users from being
+deceived by real phishing messages. We can evaluate the effectiveness
+through controlled user studies and field studies, using both known
+phishing attacks from APWG archives, and new phishing attacks with
+novel tricks invented by us.
+</p>
+<p>On the other hand, the antiphishing chain should not disrupt user's
+normal online activities. We can evaluate the degree of disruption by
+measuring the error rate of the detection methods on legitimate but
+unreputed messages, the rate of distraction by the visual cues from
+the user's primary task, and the user's subjective satisfaction.
+</p>
+<h5>References:</h5>
+<p>[1] Min Wu, Robert C. Miller and Greg Little. "<a
+ href="soups-webwallet.pdf"><span style="text-decoration: underline;">Web
+Wallet: Preventing Phishing
+Attacks by Revealing User Intentions</span></a>" Symposium on Usable
+Privacy and Security (SOUPS 2006).</p>
+<p>[2] Min Wu, Robert C. Miller and Simson L. Garfinkel. "<a
+ href="chi-security-toolbar.pdf">Do Security Toolbars
+Actually Prevent Phishing Attacks?</a>" Conference on
+Human Factors in Computing Systems (CHI 2006).</p>
+<p>[3] Min Wu. "<a
+ href="http://groups.csail.mit.edu/uid/projects/phishing/proposal.pdf">Fighting
+Phishing at the User Interface</a>." PhD Thesis proposal, December
+2004.
+</p>
+</body>
+</html>
