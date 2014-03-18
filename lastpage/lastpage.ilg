@@ -1,0 +1,9 @@
+This is C:\Program Files\MiKTeX 2.7\miktex\bin\makeindex.exe, version 2.14 [02-Oct-2002] (kpathsea + Thai support).
+Scanning input file Y:\Resume\lastpage\lastpage.idx....
+!! Input index error (file = Y:\Resume\lastpage\lastpage.idx, line = 10):
+   -- Illegal null field.
+done (17 entries accepted, 1 rejected).
+Sorting entries....done (68 comparisons).
+Generating output file Y:\Resume\lastpage\lastpage.ind....done (59 lines written, 0 warnings).
+Output written in Y:\Resume\lastpage\lastpage.ind.
+Transcript written in Y:\Resume\lastpage\lastpage.ilg.

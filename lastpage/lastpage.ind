@@ -1,0 +1,59 @@
+\begin{theindex}
+
+  \item addtocounter=\verb
+    \subitem *+\addtocounter+, 18, 21
+  \item AtEndDocument=\verb
+    \subitem *+\AtEndDocument+, 22
+
+  \indexspace
+
+  \item clearpage=\verb
+    \subitem *+\clearpage+, 24
+
+  \indexspace
+
+  \item immediate=\verb
+    \subitem *+\immediate+, 19
+
+  \indexspace
+
+  \item putlabel=\verb
+    \subitem putlabel+, \main{18}, 24
+  \item LastPage=\verb
+    \subitem *+\LastPage+, \usage{1}
+
+  \indexspace
+
+  \item message=\verb
+    \subitem *+\message+, 23
+
+  \indexspace
+
+  \item newlabel=\verb
+    \subitem *+\newlabel+, 20
+
+  \indexspace
+
+  \item ProvidesPackage=\verb
+    \subitem *+\ProvidesPackage+, 16
+
+  \indexspace
+
+  \item setlength=\verb
+    \subitem *+\setlength+, 3
+  \item space=\verb
+    \subitem *+\space+, 16
+  \item string=\verb
+    \subitem *+\string+, 19
+
+  \indexspace
+
+  \item thepage=\verb
+    \subitem *+\thepage+, 20
+
+  \indexspace
+
+  \item write=\verb
+    \subitem *+\write+, 19
+
+\end{theindex}
