@@ -1,10 +1,14 @@
 \BOOKMARK [1][-]{section*.4}{Introduction}{}% 1
-\BOOKMARK [1][-]{section*.5}{Visualizing, Clustering, and Exploring Code}{}% 2
-\BOOKMARK [1][-]{section*.6}{Social System Engineering}{}% 3
-\BOOKMARK [2][-]{section*.7}{Evaluating Alternative Designs}{section*.6}% 4
-\BOOKMARK [3][-]{section*.8}{Incorporating Interactive Visualization}{section*.7}% 5
-\BOOKMARK [2][-]{section*.9}{Pairing Students Based on Their Designs}{section*.6}% 6
-\BOOKMARK [2][-]{section*.10}{Debugging Advice Based on Test Cases}{section*.6}% 7
-\BOOKMARK [1][-]{section*.11}{Summary}{}% 8
-\BOOKMARK [1][-]{section*.12}{Acknowledgments}{}% 9
-\BOOKMARK [1][-]{section*.13}{References format}{}% 10
+\BOOKMARK [1][-]{section*.5}{Related Work}{}% 2
+\BOOKMARK [1][-]{section*.6}{Visualizing, Clustering, and Exploring Code}{}% 3
+\BOOKMARK [2][-]{section*.7}{Implementation}{section*.6}% 4
+\BOOKMARK [2][-]{section*.8}{Value for Teachers}{section*.6}% 5
+\BOOKMARK [2][-]{section*.9}{Value for Students}{section*.6}% 6
+\BOOKMARK [1][-]{section*.10}{Enhancing Code Exploration with Interactive Machine Learning}{}% 7
+\BOOKMARK [1][-]{section*.11}{Incorporating Social System Engineering}{}% 8
+\BOOKMARK [2][-]{section*.12}{Evaluating Alternative Solutions}{section*.11}% 9
+\BOOKMARK [2][-]{section*.13}{Pairing Students Based on Their Solutions}{section*.11}% 10
+\BOOKMARK [2][-]{section*.14}{Debugging Advice Based on Test Cases}{section*.11}% 11
+\BOOKMARK [1][-]{section*.15}{Summary}{}% 12
+\BOOKMARK [1][-]{section*.16}{Acknowledgments}{}% 13
+\BOOKMARK [1][-]{section*.17}{REFERENCES }{}% 14
