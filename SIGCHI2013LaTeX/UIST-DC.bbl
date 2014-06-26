@@ -25,6 +25,11 @@ Glassman, E.~L., Scott, J., Singh, R., Guo, P.~J., and Miller, R.~C.
   problems at scale (in submission).
 \newblock {\em ACM Trans. Comput.-Hum. Interact.\/} (2014).
 
+\bibitem{GlassmanCHIWkshop}
+Glassman, E.~L., Singh, R., Gulley, N., and Miller, R.~C.
+\newblock Feature engineering for clustering student solutions.
+\newblock CHI 2014 Learning Innovations at Scale Workshop, 2014.
+
 \bibitem{MOOCshop}
 Huang, J., Piech, C., Nguyen, A., and Guibas, L.~J.
 \newblock Syntactic and functional variability of a million code submissions in

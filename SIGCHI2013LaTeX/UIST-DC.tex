@@ -69,7 +69,7 @@ breaklinks=true,
 
 \numberofauthors{1}
 \author{
-  \alignauthor Elena L. Glassman\\
+  \alignauthor Elena Leah Glassman\\
     \affaddr{MIT CSAIL}\\
     \email{elg@mit.edu}
 }
@@ -158,7 +158,11 @@ I also ask how can students help each other debug, within this space of many pot
 
 On such a domain as complex as student solutions to engineering and programming assignments, traditional machine learning is simply inappropriate. Teachers each have their own internal metrics for what is and is not important when sorting through student solutions. For example, when I consulted a small sample of introductory programming course teaching assistants about how to cluster students' solutions to simple programming assignments, their clusterings often disagreed with each other on how to group and explain student variation.
 
-From the experiments the culminated in OverCode, two things are clear. First, program analysis can do rigorously what what very difficult to achieve by computing more domain-agnostic feature vectors for each solution and running unsupervised clustering techniques on more domain-agnostic feature vectors representing each solution. Interactive machine learning techniques.
+From the prototypes the culminated in OverCode, two things are clear. First, program analysis can do rigorously what what was not possible with unsupervised clustering techniques running on student solution feature vectors  \cite{GlassmanCHIWkshop}. Second, program analysis and manually specifying rewrite rules can only get teachers so far. Teachers ability to interrogate the thousands of student solutions available to them in our datasets was limited by their patience to specify what they believed to be irrelevant differences between different stacks of solutions. 
+
+This is an application ideally suited to interactive machine learning (IML) techniques. By logging teachers' interactions with the data, IML techniques could suggest or predict additional helpful feature equivalences, rather than requiring teachers to specify each one by hand. If several teachers independently explore the same dataset, their decisions can be compared or suggested to each other. The differences between each teacher's distinct clusterings can be modeled in terms of those decisions. These decisions can be the subject of staff and student discussions, and incorporated into automated grading rubrics. 
+
+Similarly, IML techniques may be able to make bigger leaps by mining student to student interactions in the social systems described in the previous section. If students are each working on debugging their own distinct processor designs, and a group of students all mark a debugging hint, provided by another student, as helpful, then those designs are related by the relevance of that particular hint. IML techniques may be able to suggest combinations of the same features used in OverCode to predict which designs are similar, based on shared hint relevance.
 
 \section{Summary}
 At the conclusion of my graduate work, I hope to have built systems that help both teachers and students in engineering and programming courses. In the development process, I hope to describe essential design principles for such systems, and show that teachers using the systems get deeper insight into their students' thoughts and designs, allowing richer conversations with students about their design choices. To better support learners when teachers are vastly outnumbered by students, or when teachers are simply not present, I hope that these systems help students help each other.
