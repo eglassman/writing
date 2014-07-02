@@ -80,7 +80,7 @@ breaklinks=true,
     \email{jks@mit.edu}
   \alignauthor Rishabh Singh\\
     \affaddr{MIT CSAIL}\\
-    \email{rishabhs@mit.edu}
+    \email{rishabh@csail.mit.edu}
       \alignauthor Philip Guo\\
       \affaddr{MIT CSAIL,}\\
       \affaddr{University of Rochester}\\
@@ -96,7 +96,7 @@ breaklinks=true,
 \begin{abstract}
 In MOOCs, a single programming exercise may produce thousands of solutions from learners. Understanding solution variation is important for providing appropriate feedback to students at scale.  The wide variation among these solutions can be a source of pedagogically valuable examples, and can be used to refine the autograder for the exercise by exposing corner cases. 
 We present OverCode, a system for visualizing and exploring thousands of programming solutions. OverCode uses both static and dynamic analysis to cluster similar solutions, and lets instructors further filter and cluster solutions based on different criteria.
-We evaluated OverCode against a non-clustering baseline in a within-subjects study with 24 teaching assistants, and found that the OverCode interface allows teachers to more quickly develop a high-level view of students? understanding and misconceptions, and to provide feedback that is relevant to more students.
+We evaluated OverCode against a non-clustering baseline in a within-subjects study with 24 teaching assistants, and found that the OverCode interface allows teachers to more quickly develop a high-level view of students' understanding and misconceptions, and to provide feedback that is relevant to more students.
 \end{abstract}
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
@@ -118,7 +118,7 @@ An information visualization approach would enable teachers to explore the varia
 % We created a code clustering technique that scales linearly with the number of solutions.
 %An important design principle of OverCode is that the clusters of student solutions are represented as readable, executable code that describes every solution in that cluster. , for each cluster,
 
-In this poster we present OverCode, a system for visualizing and exploring the variation in thousands of programming solutions.  OverCode is designed to visualize correct solutions, in the sense that they pass the automatic grading tests typically used in a programming class at scale.  OverCode uses a novel clustering technique that creates clusters of identical cleaned code, in time linear in both the number of solutions and the size of each solution. The cleaned code is readable, executable, and describes every solution in that cluster.  The cleaned code is shown in a visualization that puts code front-and-center (Figure~\ref{fig:figure1}). In OverCode, the teacher reads through code solutions that each represent an entire cluster of solutions that look and act the same. The differences between clusters are highlighted to help instructors discover and understand the variations among submitted solutions. Clusters can be filtered by the lines of code within them.  Clusters can also be merged together with {\em rewrite rules} that collapse variations that the teacher decides are unimportant. 
+In this poster we present OverCode, a system for visualizing and exploring the variation in thousands of programming solutions.  OverCode is designed to visualize correct solutions, in the sense that they pass the automatic grading tests typically used in a programming class at scale.  OverCode uses a novel clustering technique that creates clusters of identical cleaned code, is time linear in both the number of solutions and the size of each solution. The cleaned code is readable, executable, and describes every solution in that cluster.  The cleaned code is shown in a visualization that puts code front-and-center (Figure~\ref{fig:figure1}). In OverCode, the teacher reads through code solutions that each represent an entire cluster of solutions that look and act the same. The differences between clusters are highlighted to help instructors discover and understand the variations among submitted solutions. Clusters can be filtered by the lines of code within them.  Clusters can also be merged together with {\em rewrite rules} that collapse variations that the teacher decides are unimportant. 
 
 A cluster in OverCode is a set of solutions that perform the same computations, but may use different variable names or statement order.  OverCode uses a lightweight dynamic analysis to generate clusters, which scales linearly with the number of solutions. It clusters solutions whose variables take the same sequence of values when executed on test inputs and whose set of constituent lines of code are syntactically the same. An important component of this analysis is to rename variables that behave the same across different solutions. The renaming of variables serves three main purposes. First, it lets teachers create a mental mapping between variable names and their behavior which is consistent across the entire set of solutions. This may reduce the cognitive load for a teacher to understand different solutions. Second, it helps clustering by reducing variation between similar solutions. Finally, it also helps make the remaining differences between different solutions more salient. 
 
@@ -128,7 +128,7 @@ The main contributions of this work are:
 \begin{itemize}
 \item a novel visualization that shows similarity and variation among thousands of solutions, with cleaned code shown for each variant. 
 \item an algorithm that uses the behavior of variables to help cluster solutions and generate the cleaned code for each cluster of solutions.
-\item two user studies that show this visualization is useful for giving instructors a birds-eye view of thousands of students' solutions.
+\item two user studies that show this visualization is useful for giving instructors a bird's-eye view of thousands of students' solutions.
 \end{itemize}
 
 \section{Summary}
@@ -136,7 +136,7 @@ We have designed the OverCode system for visualizing thousands of Python program
 
 \section{Acknowledgments}
 
-This material is based, in part, upon work supported by the National Science Foundation Graduate Research Fellowship (grant 1122374), the Microsoft Research Fellowship, the Bose Foundation Fellowship, and by Quanta Computer as part of the Qmulus Project. Any opinions, findings, conclusions, or recommendations in this paper are the authors?, and do not necessarily reflect the views of the sponsors.
+This material is based, in part, upon work supported by the National Science Foundation Graduate Research Fellowship (grant 1122374), the Microsoft Research Fellowship, the Bose Foundation Fellowship, and by Quanta Computer as part of the Qmulus Project. Any opinions, findings, conclusions, or recommendations in this paper are the authors', and do not necessarily reflect the views of the sponsors.
 
 
 % Balancing columns in a ref list is a bit of a pain because you
