@@ -1,0 +1,77 @@
+\begin{thebibliography}{10}
+
+\bibitem{basupowergrading}
+Basu, S., Jacobs, C., and Vanderwende, L.
+\newblock Powergrading: a clustering approach to amplify human effort for short
+  answer grading.
+\newblock {\em TACL 1\/} (2013), 391--402.
+
+\bibitem{basuDivideAndConquer}
+Brooks, M., Basu, S., Jacobs, C., and Vanderwende, L.
+\newblock Divide and correct: using clusters to grade short answers at scale.
+\newblock In {\em Learning at Scale} (2014), 89--98.
+
+\bibitem{ICERGlassman}
+Glassman, E.~L., Gulley, N., and Miller, R.~C.
+\newblock Toward facilitating assistance to students attempting engineering
+  design problems.
+\newblock In {\em Proceedings of the Tenth Annual International Conference on
+  International Computing Education Research}, ICER '13, ACM (New York, NY,
+  USA, 2013).
+
+\bibitem{OverCode}
+Glassman, E.~L., Scott, J., Singh, R., Guo, P.~J., and Miller, R.~C.
+\newblock Overcode: Visualizing variation in student solutions to programming
+  problems at scale (in submission).
+\newblock {\em ACM Trans. Comput.-Hum. Interact.\/} (2014).
+
+\bibitem{GlassmanCHIWkshop}
+Glassman, E.~L., Singh, R., Gulley, N., and Miller, R.~C.
+\newblock Feature engineering for clustering student solutions.
+\newblock CHI 2014 Learning Innovations at Scale Workshop, 2014.
+
+\bibitem{MOOCshop}
+Huang, J., Piech, C., Nguyen, A., and Guibas, L.~J.
+\newblock Syntactic and functional variability of a million code submissions in
+  a machine learning mooc.
+\newblock In {\em AIED Workshops} (2013).
+
+\bibitem{wordseerhcir11}
+Muralidharan, A., and Hearst, M.
+\newblock Wordseer: Exploring language use in literary text.
+\newblock {\em Fifth Workshop on Human-Computer Interaction and Information
+  Retrieval\/} (2011).
+
+\bibitem{wordseerlitcomp13}
+Muralidharan, A., and Hearst, M.~A.
+\newblock Supporting exploratory text analysis in literature study.
+\newblock {\em Literary and linguistic computing 28}, 2 (2013), 283--295.
+
+\bibitem{wordseercikm13}
+Muralidharan, A.~S., Hearst, M.~A., and Fan, C.
+\newblock Wordseer: a knowledge synthesis environment for textual data.
+\newblock In {\em CIKM} (2013), 2533--2536.
+
+\bibitem{codewebs}
+Nguyen, A., Piech, C., Huang, J., and Guibas, L.~J.
+\newblock Codewebs: scalable homework search for massive open online
+  programming courses.
+\newblock In {\em WWW} (2014), 491--502.
+
+\bibitem{crowdscape}
+Rzeszotarski, J.~M., and Kittur, A.
+\newblock Crowdscape: interactively visualizing user behavior and output.
+\newblock In {\em UIST} (2012), 55--62.
+
+\bibitem{shasha1994exact}
+Shasha, D., Wang, J.-L., Zhang, K., and Shih, F.~Y.
+\newblock Exact and approximate algorithms for unordered tree matching.
+\newblock {\em IEEE Transactions on Systems, Man and Cybernetics 24}, 4 (1994),
+  668--678.
+
+\bibitem{zweben2012computing}
+Zweben, S.
+\newblock Computing degree and enrollment trends.
+\newblock Tech. rep., Computing Research Association, Washington, DC, 2013.
+
+\end{thebibliography}
