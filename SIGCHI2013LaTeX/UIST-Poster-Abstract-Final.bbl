@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{basupowergrading}
+Basu, S., Jacobs, C., and Vanderwende, L.
+\newblock Powergrading: a clustering approach to amplify human effort for short
+  answer grading.
+\newblock {\em TACL 1\/} (2013), 391--402.
+
+\bibitem{gradingsigcse14}
+Gaudencio, M., Dantas, A., and Guerrero, D.~D.
+\newblock Can computers compare student code solutions as well as teachers?
+\newblock In {\em Proceedings of the 45th ACM Technical Symposium on Computer
+  Science Education}, SIGCSE '14, ACM (New York, NY, USA, 2014), 21--26.
+
+\bibitem{MOOCshop}
+Huang, J., Piech, C., Nguyen, A., and Guibas, L.~J.
+\newblock Syntactic and functional variability of a million code submissions in
+  a machine learning mooc.
+\newblock In {\em AIED Workshops} (2013).
+
+\bibitem{marton13}
+Marton, F., Tsui, A., Chik, P., Ko, P., and Lo, M.
+\newblock {\em Classroom Discourse and the Space of Learning}.
+\newblock Taylor \& Francis, 2013.
+
+\bibitem{codewebs}
+Nguyen, A., Piech, C., Huang, J., and Guibas, L.~J.
+\newblock Codewebs: scalable homework search for massive open online
+  programming courses.
+\newblock In {\em WWW} (2014), 491--502.
+
+\end{thebibliography}

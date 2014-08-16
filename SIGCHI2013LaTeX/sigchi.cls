@@ -1,3 +1,5 @@
+% Scooter Morris, July 30, 2014.
+% updated to add DOI text to copyright footer
 % chi & iui 2012 cls
 % Jean-Daniel Fekete, August 28, 2011.
 % llt: re-added flushleft in \terms & \category, added compatibility for the caption package
@@ -61,9 +63,9 @@
 %
 % ---- End of 'updates' ----
 %
-\def\fileversion{V0.18}            % [jdf] for ACM's tracking purposes 
-\def\filedate{August, 28, 2011}    % [jdf] tracking data
-\def\docdate {Thursday, August 28th 2011} % [jdf] 
+\def\fileversion{V0.19}            % [sm] for ACM's tracking purposes 
+\def\filedate{July, 30, 2014}    % [sm] tracking data
+\def\docdate {Wednesday, July 30th 2014} % [sm] 
 \usepackage{epsfig}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -127,7 +129,7 @@
 %%%     dvips -e 0 foo.dvi >foo.ps
 %%%
 
-\typeout{Document Class sigchi' <Oct 19, 2011>. Updated for chi 2012
+\typeout{Document Class sigchi' <July 30, 2014>. Updated for chi 2014
   based on chi2012.cls by William Hudson and Jean-Daniel Fekete.} % DLC
 \typeout{Document Class `chi2011' <October 19, 2010>. Tweaked by Manas Tungare.} % DLC
 \typeout{Shamelessly copied from}
@@ -672,7 +674,7 @@
 
 \if@ll
   \NeedsTeXFormat{LaTeX2e}
-  \ProvidesClass{chi2012} [2011/06/06 - V0.16]  % DLC
+  \ProvidesClass{sigchi} [2011/06/06 - V0.16]  % DLC
   \RequirePackage{latexsym}% QUERY: are these two really needed?
   \let\dooptions\ProcessOptions
 \else
@@ -1525,6 +1527,8 @@ $\bullet$ ACM copyright: ACM holds the copyright on the work. This is the histor
 $\bullet$ License: The author(s) retain copyright, but ACM receives an exclusive publication license.\\
 $\bullet$ Open Access: The author(s) wish to pay for the work to be open access. The additional fee must be paid to ACM.\\
 This text field is large enough to hold the appropriate release statement assuming it is single spaced. 
+\newline
+\textcolor{red}{Every submission will be assigned their own unique DOI string to be included here.}
 }
 \clubpenalty=10000 
 \widowpenalty = 10000
