@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 AUG 2014 20:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  18 AUG 2014 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,15 +443,16 @@ Underfull \hbox (badness 1297) in paragraph at lines 167--167
 [][]\secfnt USING SYS-TEM IN-TER-AC-TIONS TO TRAIN MA-CHINE
  []
 
-[3 <./frontPageInterfacePreviewLabeled.jpg>] (./UIST-DC-Final.bbl
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
-)
+[3 <./frontPageInterfacePreviewLabeled.jpg>] (./UIST-DC-Final.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
 
-(./UIST-DC-Final.aux)
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
+ (./UIST-DC-Final.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `UIST-DC-Final.out' has not changed.
@@ -461,7 +462,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
 Here is how much of TeX's memory you used:
  6320 strings out of 493315
  90602 string characters out of 6137904
- 197069 words of memory out of 5000000
+ 182069 words of memory out of 5000000
  9620 multiletter control sequences out of 15000+600000
  35903 words of font info for 82 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -496,7 +497,7 @@ live/2013/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/201
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on UIST-DC-Final.pdf (4 pages, 1346848 bytes).
+Output written on UIST-DC-Final.pdf (4 pages, 1347000 bytes).
 PDF statistics:
  164 PDF objects out of 1000 (max. 8388607)
  150 compressed objects within 2 object streams
