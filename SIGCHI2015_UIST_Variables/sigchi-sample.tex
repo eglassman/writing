@@ -4,16 +4,17 @@
 % Consult the conference website for the camera-ready copyright statement.
 
 
-\toappear{
-Copyright is held by the owner/author(s). Publication rights licensed to ACM.\\ 
-{\emph{L@S'14}}, March 4--5, 2014, Atlanta, GA. \\
-ACM 978-1-4503-2669-8/14/03 \\
-((DOI HERE))
-}
+%% EXAMPLE BEGIN -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+% \toappear{Permission to make digital or hard copies of all or part of this work for personal or classroom use is 	granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from permissions@acm.org. \\
+% {\emph{CHI'14}}, April 26--May 1, 2014, Toronto, Canada. \\
+% Copyright \copyright~2014 ACM ISBN/14/04...\$15.00. \\
+% DOI string from ACM form confirmation}
+%% EXAMPLE END -- HOW TO OVERRIDE THE DEFAULT COPYRIGHT STRIP -- (July 22, 2013 - Paul Baumann)
+
 
 % Arabic page numbers for submission. 
 % Remove this line to eliminate page numbers for the camera ready copy
-%\pagenumbering{arabic}
+% \pagenumbering{arabic}
 
 
 % Load basic packages
@@ -44,7 +45,7 @@ ACM 978-1-4503-2669-8/14/03 \\
 % since its job is to redefine many LaTeX commands.
 \usepackage[pdftex]{hyperref}
 \hypersetup{
-pdftitle={L@S 2014 Work-in-Progress Format},
+pdftitle={SIGCHI Conference Proceedings Format},
 pdfauthor={LaTeX},
 pdfkeywords={SIGCHI, proceedings, archival format},
 bookmarksnumbered,
@@ -64,41 +65,64 @@ breaklinks=true,
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{Principles for Tools Supporting Engineering Design Challenges at Scale}
+\title{SIGCHI Conference Proceedings Format}
 
 \numberofauthors{3}
 \author{
-  \alignauthor Elena L. Glassman\\
-    \affaddr{MIT CSAIL}\\
-    \email{elg@mit.edu}
-  \alignauthor Chris Terman\\
-    \affaddr{MIT CSAIL}\\
-    \email{cjt@mit.edu}
-  \alignauthor Robert C. Miller\\
-    \affaddr{MIT CSAIL}\\
-    \email{rcm@mit.edu}
+  \alignauthor 1st Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{Address}\\
+    \email{e-mail address}\\
+    \affaddr{Optional phone number}
+  \alignauthor 2nd Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{Address}\\
+    \email{e-mail address}\\
+    \affaddr{Optional phone number}    
+  \alignauthor 3rd Author Name\\
+    \affaddr{Affiliation}\\
+    \affaddr{Address}\\
+    \email{e-mail address}\\
+    \affaddr{Optional phone number}
 }
 
 \maketitle
 
 \begin{abstract}
-Peer-instruction, peer-reviewing, and more recently learner-sourcing can help students learn, especially when the student-to-staff ratio is high. We describe three deployed learner-sourcing scenarios within the context of an undergraduate digital design class. The key design principle is students should be directed to hints written by other students who have just completed the task themselves. Initial results are promising, and warrant follow-up work.
+In this paper we describe the formatting requirements for
+SIGCHI Conference Proceedings, and this sample file
+offers recommendations on writing for the worldwide
+SIGCHI readership. Please review this document even if
+you have submitted to SIGCHI conferences before, some
+format details have changed relative to previous years.
 \end{abstract}
 
 \keywords{
-	engineering education; crowd-sourcing
+	Guides; instructions; author's kit; conference publications;
+	keywords should be separated by a semi-colon. \newline
+	\textcolor{red}{Optional section to be included in your final version, 
+  but strongly encouraged.}
 }
 
 \category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
 
+See: \url{http://www.acm.org/about/class/1998/}
+for more information and the full list of ACM classifiers
+and descriptors. \newline
+\textcolor{red}{Optional section to be included in your final version, 
+but strongly encouraged. On the submission page only the classifiers’ 
+letter-number combination will need to be entered.}
 
 \section{Introduction}
 
-A TA will never had done it the length of time as the lecturer whose taught the course, who understands the relative frequencies and value of design decisions that students make while working on engineering challenges. Furthermore, while the TA is expected to solve the lab before coming in to help the students, they can only be expected to solve it one way, of all the potential ways students choose. 
-
-<solution: crowd-sourcing with incentives and guiding constraints> The collective activity of large classes can map out  Students can become the local experts on what they implemented, which is both valuable pedagogically and from the perspective of scaling classes up without always having the staff to support them. 
-
-
+This format is to be used for submissions that are
+published in the conference proceedings.  We wish to give
+this volume a consistent, high-quality appearance. We
+therefore ask that authors follow some simple
+guidelines. In essence, you should format your paper
+exactly like this document. The easiest way to do this is
+simply to download a template from the conference web
+site, and replace the content with your own material.
 
 \section{Page Size and Columns}
 
@@ -172,6 +196,7 @@ heading, so if that heading is deleted the text box will disappear as
 well.  You can replace the default copyright notice by uncommenting
 the {\textbackslash}toappear block at the beginning of the document
 and inserting your own text, for example, for versions under review.
+
 
 \subsection{Subsequent Pages}
 
@@ -256,7 +281,7 @@ column or columns, on the same page as the relevant text
 columns to a maximum width of 17.78 cm (7 in.).
 
 Captions should be Times New Roman 9-point bold.  They should be numbered (e.g.,
-``Table~\ref{tab:table1}'' or ``Figure~\ref{fig:figure1}''), centered
+``Table~\ref{tab:table1}'' or ``Figure~\ref{fig:figure2}''), centered
 and placed beneath the figure or table.  Please note that the words
 ``Figure'' and ``Table'' should be spelled out (e.g., ``Figure''
 rather than ``Fig.'') wherever they occur.
@@ -326,39 +351,52 @@ For more information and links to instructions and resources, please see:
 {\url{http://chi2014.acm.org/authors/guide-to-an-accessible-submission}}.
 
 \section{Page Numbering, Headers and Footers}
+Your final submission SHOULD NOT contain any footer or header string information 
+at the top or bottom of each page. The submissions will be paginated in a determined 
+order by the chairs and page numbers added to the pdf during the compiling, 
+indexing, and pagination processes.
 
-Please submit your anonymous version for reviewing with page numbers
-centered in the footer.  These must be removed in the final version of
-accepted papers, as page numbers, headers, and footers will be added
-by the conference printers.  Comment out the {\textbackslash}pagenumbering
-command at the top of the document to remove page numbers.
+\section{Producing and Testing PDF Files}
 
-\section{Dear Beta: Optimization Edition}
-\subsection{Description}
-\subsection{Design Challenges}
-\begin{itemize}
-\item shorter spaces between check-ins with sheet
-\item automated population of fields/calculation of change in benmark (less lowfi)
-\item no enough incentive to participate
-\item lacks debugging tips as well (perhaps just as plentiful)
-\end{itemize}
+We recommend that you produce a PDF version of your submission well
+before the final deadline.  Your PDF file must be ACM DL
+Compliant. The requirements for an ACM Compliant PDF are available at:
+{\url{http://www.sheridanprinting.com/typedept/ACM-distilling-settings.htm}}.
 
-Students hear optimization stories from friends: I tried x and I got y points! Someone else tried it in the opposite order and got way less points! (as if that mattered. becomes magical thinking, almost.)
-Modify it to be: --it had this effect to my critical path (delta)
---It had this effect on my size (delta)
---it had this effect on my benmark (delta)
---accessed separately, not always all available at the same time (should be separate links)
-benmark is less important
+Test your PDF file by viewing or printing it with the same software we
+will use when we receive it, Adobe Acrobat Reader Version 7. This is
+widely available at no cost from~\cite{acrobat}.  Note that most
+reviewers will use a North American/European version of Acrobat
+reader, which cannot handle documents containing non-North American or
+non-European fonts (e.g. Asian fonts).  Please therefore do not use
+Asian fonts, and verify this by testing with a North American/European
+Acrobat reader (obtainable as above). Something as minor as including
+a space or punctuation character in a two-byte font can render a file
+unreadable.
 
+\section{Blind Review}
 
-\section{Future Work}
+For archival submissions, CHI requires a ``blind review.'' To prepare
+your submission for blind review, remove author and institutional
+identities in the title and header areas of the paper. You may also
+need to remove part or all of the Acknowledgments text.  Further
+suppression of identity in the body of the paper and references is
+left to the authors' discretion. For more details, see the submission
+guidelines and checklist for your submission category.
 
-\begin{itemize}
-\item deploy 'real' version of Dear Beta system for 6.004x, which does double-duty for optimization as well, since that involves bugs too
-\item do git diffs on optimization of betas this term to see what folks actually did this term?
-\item create separate interface in which students can see their own place in space and time, along with diffs, and the ability to comment what they did (via API), with pull-down suggestions from other folks <-- more of a personal help system that motivates them to annotate.
-\end{itemize}
+\section{Conclusion}
 
+It is important that you write for the SIGCHI audience.  Please read
+previous years' Proceedings to understand the writing style and
+conventions that successful authors have used.  It is particularly
+important that you state clearly what you have done, not merely what
+you plan to do, and explain how your work is different from previously
+published work, i.e., what is the unique contribution that your work
+makes to the field?  Please consider what the reader will learn from
+your submission, and how they will find your work useful.  If you
+write with these questions in mind, your work is more likely to be
+successful, both in being accepted into the Conference, and in
+influencing the work of our field.
 
 \section{Acknowledgments}
 

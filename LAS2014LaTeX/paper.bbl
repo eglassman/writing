@@ -1,0 +1,102 @@
+\begin{thebibliography}{10}
+
+\bibitem{ambrose}
+Ambrose, S.~A.
+\newblock Undergraduate engineering curriculum: The ultimate design challenge.
+\newblock {\em The Bridge 43}, 2 (2013), pp. 16--23.
+
+\bibitem{barnes}
+Barnes, T., Stamper, J.~C., Lehmann, L., and Croy, M.~J.
+\newblock A pilot study on logic proof tutoring using hints generated from
+  historical student data.
+\newblock In {\em EDM} (2008), pp. 197--201.
+
+\bibitem{Bloom}
+Bloom, B.~S.
+\newblock The 2 sigma problem: The search for methods of group instruction as
+  effective as one-to-one tutoring.
+\newblock {\em Educational researcher\/} (1984), pp. 4--16.
+
+\bibitem{curse}
+Camerer, C., Loewenstein, G., and Weber, M.
+\newblock The curse of knowledge in economic settings: An experimental
+  analysis.
+\newblock {\em Journal of Political Economy 97}, 5 (1989), pp. 1232--1254.
+
+\bibitem{selfexplanation}
+Chi, M.~T., De~Leeuw, N., Chiu, M.-H., and Lavancher, C.
+\newblock Eliciting self-explanations improves understanding.
+\newblock {\em Cognitive Science 18}, 3 (1994), pp. 439--477.
+
+\bibitem{dewey1933}
+Dewey, J.
+\newblock How we think: A restatement of the relation of reflective thinking to
+  the educational process.
+\newblock {\em Lexington, MA: Heath\/} (1933).
+
+\bibitem{productiveconfusion}
+D'Mello, S., Lehman, B., Pekrun, R., and Graesser, A.
+\newblock Confusion can be beneficial for learning.
+\newblock {\em Learning and Instruction 29}, 0 (2014), pp. 153--170.
+
+\bibitem{gertner}
+Gertner, A.~S., Conati, C., and VanLehn, K.
+\newblock Procedural help in andes: Generating hints using a bayesian network
+  student model.
+\newblock In {\em Proceedings of the Fifteenth National/Tenth Conference on
+  Artificial Intelligence/Innovative Applications of Artificial Intelligence},
+  AAAI '98/IAAI '98, American Association for Artificial Intelligence (Menlo
+  Park, CA, USA, 1998), pp. 106--111.
+
+\bibitem{helpmeout}
+Hartmann, B., MacDougall, D., Brandt, J., and Klemmer, S.~R.
+\newblock What would other programmers do: suggesting solutions to error
+  messages.
+\newblock In {\em Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, ACM (2010), pp. 1019--1028.
+
+\bibitem{kavanagh}
+Kavanagh, L., and O'Moore, L.
+\newblock Reflecting on reflection-10 years, engineering, and uq.
+\newblock In {\em Proceedings of the 19th Annual Conference of the Australasian
+  Association for Engineering Education: To Industry and Beyond}, Institution
+  of Engineers, Australia (2008).
+
+\bibitem{disequilibrium}
+Kibler, J.
+\newblock Cognitive disequilibrium.
+\newblock In {\em Encyclopedia of Child Behavior and Development}, S.~Goldstein
+  and J.~Naglieri, Eds. Springer US, 2011, pp. 380--380.
+
+\bibitem{mazur}
+Mazur, E.
+\newblock {\em Peer Instruction: A User's Manual}.
+\newblock Series in Educational Innovation. Prentice Hall, 1997.
+
+\bibitem{pals}
+O'Moore, L.~M., and Baldock, T.~E.
+\newblock Peer assessment learning sessions (pals): an innovative feedback
+  technique for large engineering classes.
+\newblock {\em European Journal of Engineering Education 32}, 1 (2007), pp.
+  43--55.
+
+\bibitem{autograder}
+Singh, R., Gulwani, S., and Solar-Lezama, A.
+\newblock Automated feedback generation for introductory programming
+  assignments.
+\newblock In {\em Proceedings of the 34th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI '13, ACM (New York, NY, USA, 2013),
+  15--26.
+
+\bibitem{peerassessment}
+Topping, K.
+\newblock Peer assessment between students in colleges and universities.
+\newblock {\em Review of Educational Research 68}, 3 (1998), pp. 249--276.
+
+\bibitem{asee}
+Turns, J., Sattler, B., Yasuhara, K., Borgford-Parnell, J., and Atman, C.
+\newblock Integrating reflection into engineering education.
+\newblock In {\em Proceedings of the ASEE Annual Conference and Exposition},
+  ACM (2014).
+
+\end{thebibliography}

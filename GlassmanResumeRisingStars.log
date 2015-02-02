@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 JUN 2014 22:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 JAN 2015 23:55
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **GlassmanResumeRisingStars.tex
 (./GlassmanResumeRisingStars.tex
@@ -53,36 +52,45 @@ No auxiliary output files.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\enitkv@toks@=\toks19
+\labelindent=\skip53
+\enit@outerparindent=\dimen106
+\enit@toks=\toks20
+\enit@inbox=\box26
+\enitdp@description=\count88
+)
 No file GlassmanResumeRisingStars.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             macros/latex/contrib/pageslts/ 
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 15.
+(lastpage)             ! on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 26.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 59.
+(Font)              <5> on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -94,38 +102,42 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
+! Extra }, or forgotten \endgroup.
+l.169 ...ternational Computing Education Research}
+                                                  .
+? 
+[3] [4]
 
-Package lastpage Warning: Rerun to get the references right on input line 254.
+Package lastpage Warning: Rerun to get the references right on input line 342.
 
 
-./GlassmanResumeRisingStars.tex:254: Package lastpage Error: No auxiliary file 
-allowed.
+! Package lastpage Error: No auxiliary file allowed.
 
 See the lastpage package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.254 \end{document}
+l.342 \end{document}
                     
 ? 
-[3] ) 
+[5] ) 
 Here is how much of TeX's memory you used:
- 473 strings out of 493315
- 5391 string characters out of 6137904
- 63098 words of memory out of 5000000
- 3996 multiletter control sequences out of 15000+600000
+ 754 strings out of 493315
+ 10140 string characters out of 6137904
+ 69736 words of memory out of 5000000
+ 4273 multiletter control sequences out of 15000+600000
  5252 words of font info for 19 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,11n,43p,1063b,273s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,43p,511b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on GlassmanResumeRisingStars.pdf (3 pages, 81521 bytes).
+Output written on GlassmanResumeRisingStars.pdf (5 pages, 90672 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

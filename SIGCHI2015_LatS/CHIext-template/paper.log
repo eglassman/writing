@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JAN 2015 23:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  2 FEB 2015 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -246,20 +246,20 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 ) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -273,7 +273,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 70.
+Package hyperref Info: Link coloring ON on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -283,9 +283,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count102
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 76.
+LaTeX Info: Redefining \pageref on input line 76.
+LaTeX Info: Redefining \nameref on input line 76.
 
 (./paper.out) (./paper.out)
 \@outlinefile=\write3
@@ -320,34 +320,34 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 72.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 78.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
 
-Overfull \hbox (12.7316pt too wide) in paragraph at lines 72--72
+Overfull \hbox (12.7316pt too wide) in paragraph at lines 78--78
 [][] 
  []
 
 
-Overfull \hbox (280.04623pt too wide) in paragraph at lines 72--72
+Overfull \hbox (280.04623pt too wide) in paragraph at lines 78--78
 [][][]  
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 72.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 72.
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 78.
+
 [1
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 106.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 112.
 
 
 [2]
@@ -355,58 +355,58 @@ Missing character: There is no Â in font cmss10!
 Missing character: There is no ­ in font cmss10!
 Missing character: There is no Â in font cmss10!
 Missing character: There is no ­ in font cmss10!
- <solutionComparison.jpg, id=93, 521.95pt x 690.58pt>
+ <solutionComparison.jpg, id=92, 521.95pt x 690.58pt>
 File: solutionComparison.jpg Graphic file (type jpg)
 
 <use solutionComparison.jpg>
-Package pdftex.def Info: solutionComparison.jpg used on input line 132.
+Package pdftex.def Info: solutionComparison.jpg used on input line 138.
 (pdftex.def)             Requested size: 130.08621pt x 172.1177pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 132.
+(caption)                particular \caption on input line 138.
 See the caption package documentation for explanation.
 
 [3 <./solutionComparison.jpg>]
-Underfull \hbox (badness 2894) in paragraph at lines 170--170
+Underfull \hbox (badness 2894) in paragraph at lines 176--176
 []|\OT1/cmss/m/n/10 ``Do not try to be too
  []
 
 
-Underfull \hbox (badness 6675) in paragraph at lines 170--170
+Underfull \hbox (badness 6675) in paragraph at lines 176--176
 \OT1/cmss/m/n/10 clever with $\OML/cmm/m/it/10 C[]$\OT1/cmss/m/n/10 ---design
  []
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 170.
+(caption)                particular \caption on input line 176.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Marginpar on page 4 moved.
 
 (./paper.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
 
 
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
 [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: EFE4390163EEE336269FBC9B2AB6B694;621.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
- 6719 strings out of 493315
- 102742 string characters out of 6137904
- 185949 words of memory out of 5000000
- 10083 multiletter control sequences out of 15000+600000
- 8803 words of font info for 26 fonts, out of 8000000 for 9000
+ 6722 strings out of 493315
+ 102778 string characters out of 6137904
+ 185883 words of memory out of 5000000
+ 10085 multiletter control sequences out of 15000+600000
+ 9154 words of font info for 27 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  43i,12n,41p,969b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -417,12 +417,11 @@ ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2
 013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on paper.pdf (4 pages, 337394 bytes).
+2013/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on paper.pdf (4 pages, 331411 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
+ 152 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  40 named destinations out of 1000 (max. 500000)
  94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
