@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 JAN 2015 23:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 MAR 2015 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -92,6 +92,11 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
 
+Overfull \hbox (2.683pt too wide) in paragraph at lines 67--68
+[]\OT1/cmr/m/n/10 Mentored by Mer-rie Ringel Mor-ris, An-dres Monroy-Hernandez,
+ and Anoop Gupta. 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 12.0pt.
@@ -101,14 +106,14 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
+[2] [3]
 ! Extra }, or forgotten \endgroup.
-l.169 ...ternational Computing Education Research}
+l.254 ...ternational Computing Education Research}
                                                   .
 ? 
-[3] [4]
+[4]
 
-Package lastpage Warning: Rerun to get the references right on input line 342.
+Package lastpage Warning: Rerun to get the references right on input line 382.
 
 
 ! Package lastpage Error: No auxiliary file allowed.
@@ -117,27 +122,28 @@ See the lastpage package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.342 \end{document}
+l.382 \end{document}
                     
 ? 
 [5] ) 
 Here is how much of TeX's memory you used:
- 754 strings out of 493315
- 10140 string characters out of 6137904
+ 758 strings out of 493315
+ 10188 string characters out of 6137904
  69736 words of memory out of 5000000
- 4273 multiletter control sequences out of 15000+600000
- 5252 words of font info for 19 fonts, out of 8000000 for 9000
+ 4276 multiletter control sequences out of 15000+600000
+ 5611 words of font info for 20 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,10n,43p,511b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,43p,449b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on GlassmanResumeRisingStars.pdf (5 pages, 90672 bytes).
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on GlassmanResumeRisingStars.pdf (5 pages, 103939 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
