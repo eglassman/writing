@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  15 MAR 2015 02:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  20 MAY 2015 07:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -85,14 +85,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 28.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 65.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
 
-Overfull \hbox (2.683pt too wide) in paragraph at lines 67--68
+Overfull \hbox (2.683pt too wide) in paragraph at lines 72--73
 []\OT1/cmr/m/n/10 Mentored by Mer-rie Ringel Mor-ris, An-dres Monroy-Hernandez,
  and Anoop Gupta. 
  []
@@ -106,14 +106,14 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
+[2]
 ! Extra }, or forgotten \endgroup.
-l.254 ...ternational Computing Education Research}
+l.184 ...ternational Computing Education Research}
                                                   .
 ? 
-[4]
+[3] [4]
 
-Package lastpage Warning: Rerun to get the references right on input line 382.
+Package lastpage Warning: Rerun to get the references right on input line 411.
 
 
 ! Package lastpage Error: No auxiliary file allowed.
@@ -122,25 +122,25 @@ See the lastpage package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.382 \end{document}
+l.411 \end{document}
                     
 ? 
 [5] ) 
 Here is how much of TeX's memory you used:
  758 strings out of 493315
  10188 string characters out of 6137904
- 69736 words of memory out of 5000000
+ 70736 words of memory out of 5000000
  4276 multiletter control sequences out of 15000+600000
  5611 words of font info for 20 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,11n,43p,449b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,43p,449b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on GlassmanResumeRisingStars.pdf (5 pages, 103942 bytes).
+Output written on GlassmanResumeRisingStars.pdf (5 pages, 106183 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
